@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>JavaScript</h1>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, odit!</p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, odit!</p>
+  <p id='p1' style="background-color: lightcyan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, autem.</p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, odit!</p>
+  <img id="developer-image" src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720__480.jpg" style="height: 250px; width: 500px;">
+  <br>
+  <a href="https://www.amazon.in/" id="link">Go to Amazon</a>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Batch</th>
+    </tr>
+    <tr>
+      <td>Aditi</td>
+      <td id="batch">11</td>
+    </tr>
+    <tr>
+      <td>Abhishek</td>
+      <td>12</td>
+    </tr>
+  </table>
+  <script>
+    // Variable Declaration - Single Line Comment
+    /* var x
+    var y */ // Multi-line comment
+
+    // 1. Change the HTML Content
+    // document.getElementById('p1').innerHTML = '<b>We are learning JavaScript</b>'
+
+    // 2. Change the Text
+    // document.getElementById('p1').innerText = 'We are learning JavaScript'
+
+    // 3. Change the attribute values of HTML Tag
+    // document.getElementById('developer-image').src = 'https://res.cloudinary.com/practicaldev/image/fetch/s--_HBZhuhF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/nweeqf97l2md3tlqkjyt.jpg'
+
+    // document.getElementById('developer-image').height = '125'
+    // document.getElementById('developer-image').width = '250'
+    // document.getElementById('link').href='https://www.google.com/'
+    // document.getElementById('link').innerText= 'Go to Google'
+
+    // 4. Change the style of HTML Tags
+    // document.getElementById('developer-image').style.height = '125px'
+    // document.getElementById('developer-image').style.width = '250px'
+
+    document.getElementById('developer-image').style.cssText = 'height: 125px; width: 250px;'
+
+    document.getElementById('p1').style.backgroundColor = 'lightblue'
+
+    document.getElementById('batch').innerText = '10'
+  </script>
+</body>
+
+</html>
+
+<!--
+  - OOP Language + Loosely typed language (use 'strict'/ Typescript)
+  - JS goes inside the <script>
+  - <script> tag can be included inside the body tag/ head tag
+  - External script (.js)
+
+  - DOM (Document Object Modal) - Entire source code of the webpage is considered as an object by Js
+  - Objects in JS: Can contain key value pairs, contain methods (functions)
+-->
