@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Operators</title>
+  <script>
+    /* 1. Arithmetic Operators: +, -, *, /, %, ++, -- */
+    var a = 10
+    var b = 5
+
+    /* 
+    Pre Increment: ++a (Increments value first, then access the value)
+    Post Increment: a++ (Access the value first, then increment the value)
+    Pre Decrement: --a
+    Post Decrement: a--
+    */
+
+    // console.log(a + b) // 15
+    // console.log(a - b) // 5
+    // console.log(a * b) // 50
+    // console.log(a / b) // 2
+    // console.log(a % b) // 0
+
+    // console.log(++a) // 11
+    // console.log(a) //11
+
+    // console.log(a++ + ++a - ++a) // 10 + 12 - 13 = 9
+
+    // var a = 10
+    // console.log(a++, a+100, a+200) //10, 111, 211
+
+    /* 2 Relational Operators: > < >= <= 
+    (== Euality Operator) 
+    (!= Inequality Operator) 
+    (=== Identical Operator) *** - Check equality along with type
+    (!== Non-Identical Operator) */
+
+    // console.log(a > b) // true
+    // console.log(a < b) // false
+    // console.log(a >= b) // true
+    // console.log(a <= b) // false
+    // console.log(a == b) // false
+    // console.log(a != b) // true
+    // console.log(a === b) // false
+    // console.log(a !== b) // true
+
+    /* Truthy and Falsy Values 
+    Truthy: true, Non-zero number, Non-empty string
+    Falsy: false, 0, empty string, null, undefined, NaN
+    */
+
+    // if(undefined){
+    //   console.log('True value')
+    // } else {
+    //   console.log('False value')
+    // }
+
+    if(6 == '6'){
+      console.log('True value')
+    } else {
+      console.log('False value')
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
