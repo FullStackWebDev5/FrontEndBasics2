@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1</title>
+  <script>
+    var a = 'JavaScript'
+
+    /*
+      1. Function Definition
+      2. Function Call (Invoke)
+    */
+
+    function display() {
+      document.getElementById
+    }
+
+    /* 
+      Take I/p from user - Bill Amount
+      Bill Amount > 3500 - 10% discount
+      Bill Amount > 2500 - 5% discount
+
+      Alert the Total amount to the user
+    */
+
+    function calculateTotalBill() {
+      var billAmount = Number(prompt('Enter your bill amount'))
+
+      if (!billAmount) {
+        console.log('Please enter a valid bill amount')
+      } else {
+        var discount = 0
+
+        if (billAmount > 3500) {
+          discount = billAmount * 0.1
+        } else if (billAmount > 2500) {
+          discount = billAmount * 0.05
+        }
+
+        console.log('Your total bill amount is ' + billAmount - discount)
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <button onclick="display()">Display</button>
+  <button onclick="calculateTotalBill()">Calculate Total Bill</button>
+</body>
+
+</html>
+
+<!--
+  Events: Any action that you perform on the browser
+
+  Event Handler:
+  1. onclick (CLICK)
+-->
