@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Var Let Const</title>
+</head>
+<body>
+  <script>
+    // var x // Declaration
+    // var x = 5 // Initialization
+
+    /*
+      1. var
+      (These pointers apply for the same scope)
+      - Re-declaration is allowed
+      - Re-initialization is allowed
+      - Re-assignment is allowed
+      - Global Scope
+
+      2. let
+      (These pointers apply for the same scope)
+      - Re-declaration is not allowed
+      - Re-Initialization is also not allowed
+      - Re-assignment is allowed
+      - Block scoped ***
+
+      3. const
+      (These pointers apply for the same scope)
+      - Re-declaration is not allowed
+      - Re-Initialization is also not allowed
+      - Re-assignment is not allowed
+      - Block scoped ***
+    */
+
+  //  {
+  //    var x = 5
+  //    x = 10
+  //  }
+  //  console.log(x)
+
+  //  {
+  //    let x = 5
+  //    x = 10
+  //  }
+  //  console.log(x)
+
+  //  {
+  //    const x = 5
+  //    x = 10
+  //  }
+  //  console.log(x)
+
+  /* 
+  - Outer scope variables will be accessible by inner scope
+  - Only if there is no other declaration in the inner scope with the same variable name
+
+  /* ----------------------- */
+    
+  </script>
+</body>
+</html>
