@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS Operators</title>
   <script>
-    /* 1. Arithmetic Operators: +, -, *, /, %, ++, -- */
+    /* ---------------------------------------------------------------- */
+    /* 1. Arithmetic Operators: +, -, *, /, %, ++, --, ** */
     var a = 10
     var b = 5
 
@@ -30,6 +31,10 @@
 
     // var a = 10
     // console.log(a++, a+100, a+200) //10, 111, 211
+
+    // console.log(2 ** 3) // 8
+
+    /* ---------------------------------------------------------------- */
 
     /* 2 Relational Operators: > < >= <= 
     (== Euality Operator) 
@@ -57,11 +62,123 @@
     //   console.log('False value')
     // }
 
-    if(6 == '6'){
-      console.log('True value')
-    } else {
-      console.log('False value')
-    }
+    // if(6 == '6'){
+    //   console.log('True value')
+    // } else {
+    //   console.log('False value')
+    // }
+
+    /* ---------------------------------------------------------------- */
+
+    /* 3. Logical Operators (&& || !)  */
+    var x = true
+    var y = false
+
+    /* 
+    (Logical AND (&&) - Both conditions should be true for overall condition to be true)
+      T && T = T
+      T && F = F
+      F && T = F
+      F && F = F
+    */
+
+    /* 
+    (Logical OR (||) - If atleast one condition is true then overall condition will be true)
+      T || T = T
+      T || F = T
+      F || T = T
+      F || F = F
+    */
+
+    /* 
+      Negation (!)
+      T : F
+      F : T
+    */
+
+    // console.log(x && y) // false
+
+    // console.log(x || y) // true
+
+    // console.log(!x) // false
+
+    /* ---------------------------------------------------------------- */
+    /* 4. Assignment Operators (=, +=, -=, *=, /=, **=) */
+
+    // a += 2 // a = a + 2
+    // console.log(a) // 12
+
+    // a -= 2 // a = a - 2
+    // console.log(a) // 8
+
+    // a *= 2 // a = a * 2
+    // console.log(a) // 20
+
+    // a /= 2 // a = a / 2
+    // console.log(a) // 5
+
+    // a **= 2 // a = a ** 2
+    // console.log(a) // 100
+
+    /* ---------------------------------------------------------------- */
+    /* 5. Bitwise Operators (&, |, <<, >>, ~(NOT), ^(XOR)) */
+
+    console.log(a & b) // 0
+
+    /*
+      10:     1010
+      5 :     0101
+      10 & 5: 0000 = 0
+    */
+
+    console.log(a | b) // 15
+
+    /*
+      10:     1010
+      5 :     0101
+      10 | 5: 1111 = 15
+    */
+
+    console.log(~a) // -11
+
+    /*
+      10 :     1010
+      ~10:     0101 = 1010 + 1 = 1011 = 11 (minus)
+    */
+
+    /* 2s Complement: 
+    1. 1s Complement: Similar to not operation
+    2. Add 1 to the LSB
+    */
+
+    console.log(a ^ b) // 15
+
+    /*
+     0 ^ 0 = 0
+     0 ^ 1 = 1
+     1 ^ 0 = 1
+     1 ^ 1 = 0
+    */
+
+    /*
+      10:     1010
+      5 :     0101
+      10 ^ 5: 1111 = 15
+    */
+
+    console.log(a >> 2) // 2
+
+    /*
+      10:      1010 
+      10 >> 2: 0010
+    */
+
+    console.log(a << 2) // 40
+
+    /*
+      10:      0000 1010 
+      10 << 2: 0010 1000    
+    */
   </script>
 </head>
 <body>

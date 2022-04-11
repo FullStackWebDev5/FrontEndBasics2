@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /* 
+      Take I/p from user - Bill Amount, Age
+      Bill Amount > 3500
+        - If Age >= 18 - 12% discount
+        - If Age < 18  - 10% discount
+
+      Alert the Total amount to the user
+    */
+
+    function calculateTotalBill() {
+      var billAmount = Number(prompt('Enter your bill amount'))
+      var age = Number(prompt('Enter your age'))
+
+      if (!billAmount || !age) {
+        console.log('Please enter a valid bill amount or age')
+      } else {
+        var discount = 0
+
+        if (billAmount > 3500 && age >= 18) {
+          discount = billAmount * 0.12
+        } else if (billAmount > 3500 && age < 18) {
+          discount = billAmount * 0.1
+        }
+
+        console.log('Your total bill amount is ' + Number(billAmount - discount))
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="calculateTotalBill()">Calculate Total Bill</button>
+</body>
+</html>

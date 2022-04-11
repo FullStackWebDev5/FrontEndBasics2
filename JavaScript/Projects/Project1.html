@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2</title>
+  <script>
+    var bulbStatus = false // false stands for OFF status
+
+    function turnOn() {
+      document.getElementById("bulb-img").src = "https://www.w3schools.com/js/pic_bulbon.gif"
+    }
+    
+    function turnOff() {
+      document.getElementById("bulb-img").src = "https://www.w3schools.com/js/pic_bulboff.gif"
+    }
+    
+    function turnOnorOff() {
+      if(bulbStatus){
+        document.getElementById("bulb-img-2").src = "https://www.w3schools.com/js/pic_bulboff.gif"
+        bulbStatus = false
+      } else {
+        document.getElementById("bulb-img-2").src = "https://www.w3schools.com/js/pic_bulbon.gif"
+        bulbStatus = true
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <img id="bulb-img" src="https://www.w3schools.com/js/pic_bulboff.gif">
+    <br>
+    <button onclick="turnOn()">Turn On</button>
+    <button onclick="turnOff()">Turn Off</button>
+  </div>
+  <div>
+    <img id="bulb-img-2" src="https://www.w3schools.com/js/pic_bulboff.gif">
+    <br>
+    <button onclick="turnOnorOff()">Turn On/Off</button>
+  </div>
+</body>
+
+</html>
+
+<!-- 
+  https://www.w3schools.com/js/pic_bulbon.gif
+  https://www.w3schools.com/js/pic_bulboff.gif 
+-->
