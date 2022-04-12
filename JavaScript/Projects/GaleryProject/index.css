@@ -24,6 +24,7 @@ body{
   color: #fff;
   cursor: pointer;
   margin: 10px;
+  transition: all 700ms ease-in;
 }
 
 .panel.active{
@@ -41,6 +42,7 @@ body{
 
 .panel.active h3{
   opacity: 1;
+  transition: opacity 300ms ease-in 400ms;
 }
 
 #panel-1{
