@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoisting</title>
+</head>
+<body>
+  <script>
+    /* Hoisting: 
+    - JS will hoist all the declarations to the top of that block (***)
+    - This is applicable to all identifier declarations made by var, let or const
+    - Identifiers declared using let or const are also hoisted, but you cannot access those before intialization - (Temporal Dead Zone)
+    */
+
+    // console.log(x)
+
+    // // code1
+
+    // // code2
+
+    // var x
+
+    /* ---------------------------------------------------------------- */
+
+    // var x
+    // console.log(x)
+
+    // // code1
+
+    // // code2
+
+    // x = 5
+
+    // console.log(x)
+
+    /* ---------------------------------------------------------------- */
+
+    // console.log (x)
+
+    // // code1
+
+    // // code2
+
+    // let x = 10
+  </script>
+</body>
+</html>
