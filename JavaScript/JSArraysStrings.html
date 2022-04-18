@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Arrays and Strings</title>
+</head>
+<body>
+  <h1 id="display"></h1>
+  <script>
+    let arr = ['Aditi', 5, true, 'Anurag']
+    // console.log(arr)
+    // console.log(arr.toString())
+
+    // .join() -> Converts an array to string with the specified delimiter, will not cause change to the original array
+    // console.log(arr.join(' '))
+
+    // .split() -> Converts string to an array on the basis of delimiter specified
+    // let str = 'Vikas-Vaishnavi-Shweta-Shreyash'
+    // // console.log(str.split('-'))
+    // console.log(str.split(''))
+
+    let str = 'JavaScript + HTML + CSS + Bootstrap'
+
+    // Convert to array of all characters - Use reverse method - join characters back to form the string
+    console.log(str.split('').reverse().join(''))
+  </script>
+</body>
+</html>

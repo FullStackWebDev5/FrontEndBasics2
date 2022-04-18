@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays in JS</title>
+  <script>
+    // Arrays - Collections on elements (Regardless of data type)
+
+    let arr = [7, 3, 12, 4, 18, 6]
+
+    // Access element present at a given index
+    // console.log(arr[2])
+
+    // console.log(arr[arr.length - 1])
+
+    // for(let i = 0; i < arr.length; i++){
+    //   console.log(i, arr[i])
+    // }
+
+    // delete arr[3] // creates in holes, not recommended
+    // console.log(arr)
+
+    // Property
+    // .length - Length of the array
+    // console.log(arr.length)
+
+    // Stack - LIFO
+    // |1 2 3 4 5 <- Top most element
+
+    // Methods
+    // .push() -> Pushes new element towards the end of the array, causes change in the original array,, returns the updated length of the array
+    // let updatedLength = arr.push(10)
+
+    // console.log(arr)
+
+    // .pop() -> Removes element from the end of the array, causes change in the original array, returns the popped out element
+    // let x = arr.pop()
+    // let y = arr.pop()
+    // // arr.pop()
+    // console.log(x, y)
+
+    //.shift() -> Removes element from the start of the array, causes change in the original array, return the removed element
+    // let x = arr.shift()
+    // console.log(arr, x)
+
+    //.unshift() -> Adds element from the start of the array, causes change in the original array, returns the updated array length
+    // let x = arr.unshift(12)
+    // console.log(x)
+
+    // .concat() -> This will not cause any change to the original array, will create a collection of elements of both the arrays and return
+    // let arr2 = ['Akash', 'Naveen']
+    // let concatenatedArray =  arr.concat(arr2)
+    // console.log(concatenatedArray)
+
+    // .slice() ->
+    // let arr2 = arr.slice(1, 3)
+    // console.log(arr2)
+
+    // .reverse() -> Reverse the order of elements, this will cause change to the original array
+    arr.reverse()
+    console.log(arr)
+
+    // .splice() -> 
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
