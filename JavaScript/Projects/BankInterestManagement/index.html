@@ -5,9 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bank Interest Management</title>
+  <link href="index.css" rel="stylesheet">
 </head>
 <body>
+  <div class="bank-balance-display">
+    <table>
+      <tr>
+        <th>Account Holder Name</th>
+        <th>Current Account Balance</th>
+        <th>Balance After Interest</th>
+      </tr>
+      <tr>
+        <td>Aditya</td>
+        <td><input type="number" id="bank-balance-1"></td>
+        <td><input type="number" disabled></td>
+      </tr>
+      <tr>
+        <td>Rajesh</td>
+        <td><input type="number" id="bank-balance-2"></td>
+        <td><input type="number" disabled></td>
+      </tr>
+      <tr>
+        <td>Shreyash</td>
+        <td><input type="number" id="bank-balance-3"></td>
+        <td><input type="number" disabled></td>
+      </tr>
+    </table>
+    <button onclick="calculateInterest()">Calculate Interest for all account holders</button>
+  </div>
   <script src="index.js"></script>
-  
 </body>
 </html>

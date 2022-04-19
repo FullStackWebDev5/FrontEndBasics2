@@ -1,0 +1,33 @@
+.bank-balance-display{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.bank-balance-display table {
+  border: 2px solid black;
+}
+
+table, tr, th, td{
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+td, th{
+  padding: 10px;
+}
+
+td input{
+  width: 90%;
+}
+
+.bank-balance-display button{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
