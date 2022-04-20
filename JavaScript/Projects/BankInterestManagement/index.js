@@ -35,10 +35,76 @@
 
 // console.log(bankBalances)
 
-function calculateInterest () {
-  let bankBalance1 = Number(document.getElementById('bank-balance-1').value)
-  let bankBalance2 = Number(document.getElementById('bank-balance-2').value)
-  let bankBalance3 = Number(document.getElementById('bank-balance-3').value)
+/* ---------------------------------------------------------------- */
 
-  console.log(bankBalance1, bankBalance2, bankBalance3)
+// function calculateInterest () {
+//   let bankBalance1 = Number(document.getElementById('bank-balance-1').value)
+//   let bankBalance2 = Number(document.getElementById('bank-balance-2').value)
+//   let bankBalance3 = Number(document.getElementById('bank-balance-3').value)
+
+//   let updateBankBalance1 = document.getElementById('updated-bank-balance-1')
+//   let updateBankBalance2 = document.getElementById('updated-bank-balance-2')
+//   let updateBankBalance3 = document.getElementById('updated-bank-balance-3')
+
+//   let bankBalances = [bankBalance1, bankBalance2, bankBalance3]
+
+//   for(let i = 0; i < bankBalances.length; i++){
+//     bankBalances[i] = Number(bankBalances[i])
+//     if(bankBalances[i] > 200000){
+//       bankBalances[i] = bankBalances[i] + bankBalances[i] * 0.1
+//       bankBalances[i] = bankBalances[i] - bankBalances[i] * 0.002
+//     } else if (bankBalances[i] > 100000 ) {
+//       bankBalances[i] = bankBalances[i] + bankBalances[i] * 0.05
+//       bankBalances[i] = bankBalances[i] - bankBalances[i] * 0.0005
+//     } else {
+//       bankBalances[i] = bankBalances[i] + bankBalances[i] * 0.03
+//     }
+//   }
+
+//   updateBankBalance1.value = bankBalances[0]
+//   updateBankBalance2.value = bankBalances[1]
+//   updateBankBalance3.value = bankBalances[2]
+// }
+
+/* ---------------------------------------------------------------- */
+
+function calculateInterest () {
+  let inputBalanceNodes = document.getElementsByClassName('input-balance')
+  
+  for(let i = 0; i < inputBalanceNodes.length; i++) {
+    console.log(inputBalanceNodes[i].value)
+  }
+
+  let displayUpdatedBalances = document.getElementsByClassName('display-updated-balance')
+
+  for(let i = 0; i < displayUpdatedBalances.length; i++) {
+    displayUpdatedBalances[i].value = 2000
+  }
+
+  // let bankBalance1 = Number(document.getElementById('bank-balance-1').value)
+  // let bankBalance2 = Number(document.getElementById('bank-balance-2').value)
+  // let bankBalance3 = Number(document.getElementById('bank-balance-3').value)
+
+  // let updateBankBalance1 = document.getElementById('updated-bank-balance-1')
+  // let updateBankBalance2 = document.getElementById('updated-bank-balance-2')
+  // let updateBankBalance3 = document.getElementById('updated-bank-balance-3')
+
+  // let bankBalances = [bankBalance1, bankBalance2, bankBalance3]
+
+  // for(let i = 0; i < bankBalances.length; i++){
+  //   bankBalances[i] = Number(bankBalances[i])
+  //   if(bankBalances[i] > 200000){
+  //     bankBalances[i] = bankBalances[i] + bankBalances[i] * 0.1
+  //     bankBalances[i] = bankBalances[i] - bankBalances[i] * 0.002
+  //   } else if (bankBalances[i] > 100000 ) {
+  //     bankBalances[i] = bankBalances[i] + bankBalances[i] * 0.05
+  //     bankBalances[i] = bankBalances[i] - bankBalances[i] * 0.0005
+  //   } else {
+  //     bankBalances[i] = bankBalances[i] + bankBalances[i] * 0.03
+  //   }
+  // }
+
+  // updateBankBalance1.value = bankBalances[0]
+  // updateBankBalance2.value = bankBalances[1]
+  // updateBankBalance3.value = bankBalances[2]
 }

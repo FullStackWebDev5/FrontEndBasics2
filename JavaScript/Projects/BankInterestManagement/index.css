@@ -20,7 +20,8 @@ td, th{
 }
 
 td input{
-  width: 90%;
+  width: 75%;
+  padding: 10px 20px;
 }
 
 .bank-balance-display button{
