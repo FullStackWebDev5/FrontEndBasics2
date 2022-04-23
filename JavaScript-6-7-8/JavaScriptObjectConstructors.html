@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Object Constructors</title>
+  <script>
+    function Student(firstName, lastName, batch, course, placeOfStay){
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.batch = batch;
+      this.course = course;
+      this.placeOfStay = placeOfStay;
+      this.country = 'India'
+    }
+
+    Student.prototype.age = 23
+
+    let mazhar = new Student('Mazhar', 'Syed', 7, 'MERN', 'Kolkata')
+
+    mazhar['state'] = 'West Bengal'
+
+    let swapneel = new Student('Swapneel', 'Shubham', 8, 'MERN', 'Mumbai')
+
+    console.log(swapneel)
+
+    // let mazhar= {
+    //   firstName: 'Mazhar',
+    //   lastName: 'Syed',
+    //   batch: '7',
+    //   course: 'MERN'
+    // }
+
+    // let swapneel= {
+    //   firstName: 'Swapneel',
+    //   lastName: 'Shubham',
+    //   batch: '8',
+    //   course: 'MERN'
+    // }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
