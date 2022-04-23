@@ -2,6 +2,8 @@ let firstNameValid = document.getElementById("firstNameValid")
 let firstNameInvalid = document.getElementById("firstNameInvalid")
 let lastNameValid = document.getElementById("lastNameValid")
 let lastNameInvalid = document.getElementById("lastNameInvalid")
+let emailValid = document.getElementById("emailValid")
+let emailInvalid = document.getElementById("emailInvalid")
 
 function validate() {
   let firstName = document.getElementById("firstName").value;
@@ -26,4 +28,13 @@ function validate() {
     lastNameValid.style.display = 'block'
     lastNameInvalid.style.display = 'none'
   }
+
+  if(email === '' || !email.includes('@') || !email.includes('.') || email.startsWith('@') || email.slice(email.lastIndexOf('.') + 1).length < 2) {
+    emailInvalid.style.display = 'block'
+    emailValid.style.display = 'none'
+  } else {
+    emailValid.style.display = 'block'
+    emailInvalid.style.display = 'none'
+  }
 }
+
