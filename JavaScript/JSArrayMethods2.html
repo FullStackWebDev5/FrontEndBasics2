@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Array Methods 2</title>
+  <script>
+    // let arr = [1, 2, 3]
+
+    // let arr2 = ['Aditya', 'Akash', 'Vaishnavi', 'Rajesh']
+
+    /* ------------------------------------------------------------------------------------------------
+      1. forEach - Iterate through elements of an array, cannot manipulate elements inside forEach loop, does not return anything
+
+        forEach(function (element, index){
+          // code
+         })
+
+         forEach((element, index) => {
+          // code
+         })
+
+         let fun1 = function (element, index) {
+
+         }
+         arr.forEach(fun1)
+    ------------------------------------------------------------------------------------------------ */
+    
+    // arr2.forEach(function (element, index){
+    //   console.log(index, element)
+    // })
+
+    // console.log(x)
+
+    /* ------------------------------------------------------------------------------------------------
+      2. filter - Loop through each element and return the array of elements which match the specified condition
+      - Loop through each element of the array
+      - Returns a condition
+      - Return an array of only those elements which match the specified condition
+      - No change in input array
+    
+      let newArr = arr.filter(function (element, index){
+        return [condition]
+      })
+
+      let newArr = arr.filter((element, index) => {
+        return [condition]
+      })
+
+      let newArr = arr.filter((element, index) => [condition])
+    ------------------------------------------------------------------------------------------------   */
+
+    // let arr = [5, 10, 14, 20, 25]
+
+    // let newArr = []
+
+    // for(let i = 0; i < arr.length ; i++){
+    //   if(arr[i] % 5 === 0){
+    //     newArr.push(arr[i])
+    //   }
+    // }
+
+    // console.log(newArr)
+
+    // let newArr = arr.filter(function(element, index){
+    //   return element % 5 === 0
+    // })
+    
+    // let newArr = arr.filter(function (element, index){
+    //   return element % 5 !== 0
+    // })
+
+
+    // let arr = ['Akash', 'Naveen', 'Rama', 'Rambali', 'Shweta']
+
+    // let newArr = arr.filter(function (element, index) {
+    //   return element.length === 6
+    // })
+
+    // let newArr = arr.filter(element => element.length === 6)
+
+    // console.log(newArr)
+
+
+    // let arr = ['Vikash', 'Rajesh', 'Hardeep', 'Yashasvi']
+
+    // let newArr = arr.filter(function (element, index){
+    //   return true
+    // })
+
+    // console.log(newArr)
+
+
+    // let arr = ['Vikash', 'Rajesh', 'Hardeep', 'Yashasvi']
+
+    // let newArr = arr.filter(function (element, index){
+    //   return false
+    // })
+
+    // if(newArr.length){
+    //   console.log('Hi')
+    // } else {
+    //   console.log('Hello')
+    // }
+
+
+    /* ------------------------------------------------------------------------------------------------
+      3. every - Returns true if all elements in that array satisfy the given condition
+      - Return a condition inside the code
+      - Returns true, if all elements satisfy that specified condition, else returns false
+    ------------------------------------------------------------------------------------------------ */
+
+    // let arr = [300, 100, 400, 222, 550]
+
+    // let isEveryElementDivisibleBy10 = arr.every(function (element, index){ // [T, T, T, F, T] = F
+    //   return element % 10 === 0
+    // })
+
+    // console.log(isEveryElementDivisibleBy10)
+
+     /* ------------------------------------------------------------------------------------------------
+      4. some - Returns true if any one element in that array satisfies the given condition
+      - Return a condition inside the code
+      - Returns true, if any one element satisfies that specified condition, else returns false
+    ------------------------------------------------------------------------------------------------ */
+
+    // [T, T, T, F, T] = T
+
+    // let arr = ['Vikash', 'Rajesh', 'Hardeepsg', 'Yashasvi', 'Rama'] 
+    // Return that string/name which has length 7 and middle character as 'd'
+
+    // let flag = false
+    // for(let i = 0; i< arr.length ; i++){
+    //   if(arr[i].length === 7 && arr[i][Math.floor(arr[i].length / 2)] === 'd'){
+    //     flag = true
+    //     break;
+    //   }
+    // }
+    // if(flag === false){
+    //   console.log("There doesn't exist even a single element which matches the given condition")
+    // } else {
+    //   console.log("There exists atleast one element which matches the given condition")
+    // }
+
+
+    // let flag = arr.some(function (element, index){
+    //   return element.length === 7 && element[Math.floor(element.length / 2)] === 'd'
+    // })
+
+    // if(flag === false){
+    //   console.log("There doesn't exist even a single element which matches the given condition")
+    // } else {
+    //   console.log("There exists atleast one element which matches the given condition")
+    // }
+
+    // console.log(arr.some((element, index) => element.length === 7 && element[Math.floor(element.length / 2)] === 'd') ? "There exists atleast one element which matches the given condition" : "There doesn't exist even a single element which matches the given condition")
+
+    /* ------------------------------------------------------------------------------------------------
+     5. map - Returns the array of returned values as per the given code
+     - Loop through each element of the array
+     - Returns the element/ modified element
+     - Return an array of all returned values (Length of original array and returned array will always be same)
+     - No change in input array
+
+     let newArr = arr.map(function (element, index){
+      // code
+      return [xyz]
+     })
+    ------------------------------------------------------------------------------------------------ */
+
+    // let arr = ['Akash', 'Naveen', 'Rama', 'Rambali', 'Shweta']
+
+    // let newArr = arr.map(function (element, index){
+    //   return element + '5'
+    // })
+
+    // console.log(newArr)
+
+    /* You are given with an array of arrays, the nested arrays have 2 elements each, i.e, firstName and lastName.
+       You need to return an array of fullName
+
+       let arr = [['Aramvbh', 'Suyal'], ['Naveen', 'Chebolu'], ['Waris', 'Alam'], ['Chaitanya', 'Krishna']]
+       O/P: ['Arambh Suyal', 'Naveen Chebolu', 'Waris Alam', 'Chaitanya Krishna']
+    */
+
+    // let arr = [['Aramvbh', 'Suyal'], ['Naveen', 'Chebolu'], ['Waris', 'Alam'], ['Chaitanya', 'Krishna']]
+
+    // let newArr = []
+    // for(let i = 0; i < arr.length; i++){
+    //   let fullName = arr[i].join(' ')
+    //   newArr.push(fullName)
+    // }
+
+    // console.log(newArr)
+
+
+    // let newArr = arr.map(function (element, index){
+    //   return element.join(' ')
+    // })
+
+    // console.log(newArr)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
