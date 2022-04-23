@@ -18,19 +18,25 @@
   <div class="container">
     <div class="registration-form">
       <h1 class="display-3 mb-3">Registration Form</h1>
-      <form class="row g-3 needs-validation" novalidate onsubmit="validate()">
+      <form class="row g-3 needs-validation" novalidate>
         <div class="col-md-4">
           <label for="firstName" class="form-label">First name</label>
           <input type="text" class="form-control" id="firstName" required>
-          <div class="valid-feedback">
+          <div class="valid-feedback" id="firstNameValid">
             Looks good!
+          </div>
+          <div class="invalid-feedback" id="firstNameInvalid">
+            Please enter a valid first name.
           </div>
         </div>
         <div class="col-md-4">
           <label for="lastName" class="form-label">Last name</label>
           <input type="text" class="form-control" id="lastName" required>
-          <div class="valid-feedback">
+          <div class="valid-feedback" id="lastNameValid">
             Looks good!
+          </div>
+          <div class="invalid-feedback" id="lastNameInvalid">
+            Please enter a valid last name.
           </div>
         </div>
         <div class="col-md-4">
@@ -39,16 +45,22 @@
             <span class="input-group-text" id="inputGroupPrepend">@</span>
             <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend"
               required>
-            <div class="invalid-feedback">
-              Please choose a username.
+            <div class="valid-feedback" id="emailValid">
+              Looks good!
+            </div>
+            <div class="invalid-feedback" id="emailInvalid">
+              Please enter correct email.
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <label for="phoneNumber" class="form-label">Phone Number</label>
           <input type="text" class="form-control" id="phoneNumber" required>
-          <div class="invalid-feedback">
-            Please provide a valid phone number.
+          <div class="valid-feedback" id="phoneValid">
+            Looks good!
+          </div>
+          <div class="invalid-feedback" id="phoneInvalid">
+            Please enter a valid phone number.
           </div>
         </div>
         <div class="col-md-4">
@@ -57,14 +69,20 @@
             <option selected disabled value="">Choose...</option>
             <option>...</option>
           </select>
-          <div class="invalid-feedback">
+          <div class="valid-feedback" id="stateValid">
+            Looks good!
+          </div>
+          <div class="invalid-feedback" id="stateInvalid">
             Please select a valid state.
           </div>
         </div>
         <div class="col-md-4">
           <label for="zipCode" class="form-label">Zip</label>
           <input type="text" class="form-control" id="zipCode" required>
-          <div class="invalid-feedback">
+          <div class="valid-feedback" id="zipCodeValid">
+            Looks good!
+          </div>
+          <div class="invalid-feedback" id="zipCodeInvalid">
             Please provide a valid zip.
           </div>
         </div>
@@ -80,7 +98,7 @@
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-dark" type="submit">Submit form</button>
+          <button class="btn btn-dark" type="button" onclick="validate()">Submit form</button>
         </div>
       </form>
     </div>
