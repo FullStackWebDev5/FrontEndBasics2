@@ -1,6 +1,19 @@
+import React, { Component } from 'react'
 import './App.css';
+import ChildComponent1 from './components/ChildComponent1/ChildComponent1'
+import ChildComponent2 from './components/ChildComponent2'
 
-
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        App
+        <ChildComponent1 />
+        <ChildComponent2 />
+      </div>
+    );
+  }
+}
 
 export default App;
 
@@ -16,6 +29,8 @@ export default App;
   - Parts of UI
   - Can be nested
   - Can be re-used
+
+  Fragments - Can be used to wrap adjancent JSX elements into one parent <></>
 */
 
 

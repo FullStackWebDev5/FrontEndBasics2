@@ -1,15 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classes in JavaScript</title>
   <script>
-    
+    /* Template for Objects */
+
+    // class Student{
+    //   constructor(name, batch){
+    //     this.name = name
+    //     this.batch = batch
+    //   }
+    // }
+
+    // let prakash = new Student('Prakash', 6)
+
+    // console.log(prakash)
+
+    class Student {
+      constructor(name, course, batch, techStack, marks1, marks2) {
+        this.name = name
+        this.course = course
+        this.batch = batch
+        this.techStack = techStack
+        this.marks1 = marks1
+        this.marks2 = marks2
+      }
+
+      display() { // Getter Methods
+        // console.log(this.name + ' is from batch ' + this.batch + ' studying ' + this.course + ' for ' + this.techStack + ' stack specialization ')
+
+        console.log(`${this.name} is from batch ${this.batch} studying ${this.course} for ${this.techStack} stack specialization`)
+      }
+
+      showResult() {
+        if (this.marks1 >= 35 && this.marks2 >= 35) {
+          console.log("Student passed in both subjects");
+        } else if (this.marks1 >= 35 && this.marks2 < 35) {
+          console.log("Student passed only in first subject");
+        } else if (this.marks1 < 35 && this.marks2 >= 35) {
+          console.log("Student passed only in second subject");
+        } else {
+          console.log("Failed in both subjects");
+        }
+      }
+
+      changeTechStack(newTechStack){ // Setter method
+        this.techStack = newTechStack
+      }
+    }
+
+    let prakash = new Student('Prakash', 'Front End Development', 6, 'MERN', 32, 75)
+    console.log(prakash)
+
+    // Methods inside classes can be of 2 types:
+    // 1. Getters
+    // 2. Setters
+
+    prakash.changeTechStack('MEAN')
+    prakash.display()
+    // prakash.showResult()
+
   </script>
 </head>
+
 <body>
-  
+
 </body>
+
 </html>
