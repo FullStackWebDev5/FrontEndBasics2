@@ -4,6 +4,8 @@ let lastNameValid = document.getElementById("lastNameValid")
 let lastNameInvalid = document.getElementById("lastNameInvalid")
 let emailValid = document.getElementById("emailValid")
 let emailInvalid = document.getElementById("emailInvalid")
+let phoneValid = document.getElementById("phoneValid")
+let phoneInvalid = document.getElementById("phoneInvalid")
 
 function validate() {
   let firstName = document.getElementById("firstName").value;
@@ -35,6 +37,14 @@ function validate() {
   } else {
     emailValid.style.display = 'block'
     emailInvalid.style.display = 'none'
+  }
+
+  if(phoneNumber === '' || phoneNumber.length != 10 || Number(phoneNumber[0]) < 6 ){
+    phoneInvalid.style.display = 'block'
+    phoneValid.style.display = 'none'
+  } else {
+    phoneValid.style.display = 'block'
+    phoneInvalid.style.display = 'none'
   }
 }
 
