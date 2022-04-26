@@ -6,6 +6,11 @@ let emailValid = document.getElementById("emailValid")
 let emailInvalid = document.getElementById("emailInvalid")
 let phoneValid = document.getElementById("phoneValid")
 let phoneInvalid = document.getElementById("phoneInvalid")
+let zipCodeValid = document.getElementById("zipCodeValid")
+let zipCodeInvalid = document.getElementById("zipCodeInvalid")
+let tnCInvalid = document.getElementById("tnCInvalid")
+let stateValid = document.getElementById("stateValid")
+let stateInvalid = document.getElementById("stateInvalid")
 
 function validate() {
   let firstName = document.getElementById("firstName").value;
@@ -14,6 +19,7 @@ function validate() {
   let phoneNumber = document.getElementById("phoneNumber").value;
   let state = document.getElementById("state").value;
   let zipCode = document.getElementById("zipCode").value;
+  let tNCCheckBox = document.getElementById("tNCCheckBox").checked;
 
   if (firstName === ''){
     firstNameInvalid.style.display = 'block'
@@ -45,6 +51,28 @@ function validate() {
   } else {
     phoneValid.style.display = 'block'
     phoneInvalid.style.display = 'none'
+  }
+
+  if(zipCode === '' || zipCode.length != 6){
+    zipCodeInvalid.style.display = 'block'
+    zipCodeValid.style.display = 'none'
+  } else {
+    zipCodeValid.style.display = 'block'
+    zipCodeInvalid.style.display = 'none'
+  }
+
+  if(!tNCCheckBox){
+    tnCInvalid.style.display = 'block'
+  } else {
+    tnCInvalid.style.display = 'none'
+  }
+
+  if(state === ''){
+    stateInvalid.style.display = 'block'
+    stateValid.style.display = 'none'
+  } else {
+    stateValid.style.display = 'block'
+    stateInvalid.style.display = 'none'
   }
 }
 
