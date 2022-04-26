@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Objects</title>
+  <script>
+    // Objects - Collection of elements with named indexes
+    // Use {}, keys and values are separated by ':', key-value pairs are separated by commas
+
+    // let obj = {
+    //   name: 'Shashank',
+    //   place: 'Kanpur'
+    // }
+
+    // Properties
+    // - Keys in Objects which are used only for access purpose are known as Properties
+
+    // Methods
+    // - Keys in Objects which are used only for executing purpose are known as Methods
+
+    // let aditi = {
+    //   fullName: 'Aditi',
+    //   age: 20,
+    //   likesIcecream: false
+    // }
+
+    // Accessing values of an object using keys
+    // 1. console.log(aditi.age)
+
+    // 2. console.log(aditi['likesIcecream'])
+
+    // let car = {
+    //   passengers: 5,
+    //   wheels: 4,
+    //   brand: 'Maruti Suzuki',
+    //   color: 'black'
+    // }
+
+    // let rahul = {
+    //   firstName: 'Rahul',
+    //   lastName: 'Singh',
+    //   age: 20,
+    //   likesSinging: true
+    // }
+
+    // let anju = {
+    //   firstName: 'Anju',
+    //   lastName: 'XYZ',
+    //   age: 22,
+    //   likesSinging: false
+    // }
+
+    // console.log(anju.firstName + ' ' + anju.lastName + ' is ' + anju.age + ' years old and he/she ' + (anju.likesSinging ? 'likes' : 'does not like') + ' singing.')
+
+    // Manipulate Object values using keys
+    // rahul.age = 21
+    // rahul['age'] = 21
+
+    // console.log(rahul)
+
+    // {
+    //   passengers: 5,
+    //   wheels: 4,
+    //   brand: 'Maruti Suzuki',
+    //   color: 'black'
+    // }
+
+    // let str = '{"passengers": 5,"wheels": 4}'
+
+    // let obj = JSON.parse(str)
+
+    // console.log(obj)
+
+    // [object Object] -> You were trying to display object in DOM
+  </script>
+</head>
+
+<body>
+  <h1 id="display-object"></h1>
+  <script>
+    // let obj = {
+    //   passengers: 5,
+    //   wheels: 4,
+    // }
+
+    // console.log(JSON.stringify(obj))
+
+    // JSON Methods
+    // JSON.stringify - Converts object to string
+    // JSON.parse - Convert string to object
+
+    // document.getElementById('display-object').innerHTML = JSON.stringify(obj)
+
+    // let x = '{"passengers":5,"wheels":4}'
+    // console.log(JSON.parse(x))
+
+    // JSON -> JavaScript Object Notation
+  </script>
+</body>
+
+</html>
