@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Exercise 7</title>
+  <script>
+    let students =
+      [
+        {
+          name: 'Rama',
+          batch: 9,
+          likesIcecream: true,
+        },
+        {
+          name: 'Irfan',
+          batch: 8,
+          likesIcecream: false,
+        },
+        {
+          name: 'Swapneel',
+          batch: 7,
+          likesIcecream: false,
+        },
+        {
+          name: 'Sampath',
+          batch: 8,
+          likesIcecream: true,
+        },
+        {
+          name: 'Vishwanath',
+          batch: 9,
+          likesIcecream: true,
+        }
+      ]
+
+    // Q - Return array of only those students who like ice cream
+    // Expected Answer - 
+    // let studentsWhoLikeIcecream = [{
+    //   name: 'Rama',
+    //   batch: 9,
+    //   likesIcecream: true,
+    // }, {
+    //   name: 'Sampath',
+    //   batch: 8,
+    //   likesIcecream: true,
+    // },
+    // {
+    //   name: 'Vishwanath',
+    //   batch: 9,
+    //   likesIcecream: true,
+    // }]
+
+    // Method 1 - For loop
+    // let studentslikesice = [];
+    // for (let i = 0; i < students.length; i++) {
+    //   if (students[i].likesIcecream == true) {
+    //     studentslikesice.push(students[i])
+    //   }
+    // }
+    // console.log(studentslikesice)
+
+    // Method 2 - forEach
+    // let studentsWhoLikeIcecream = []
+    // students.forEach(function(student){
+    //   if(student.likesIcecream == true){
+    //     studentsWhoLikeIcecream.push(student)
+    //   }
+    // })
+    // console.log(studentsWhoLikeIcecream)
+
+    // Method 3 - filter
+    // let studentsWhoLikeIcecream = students.filter(function(student, index){
+    //   return student.likesIcecream === true
+    // })
+
+    // Method 3 - [Improvise]
+    // let studentsWhoLikeIcecream = students.filter(student => student.likesIcecream === true)
+
+    // let studentsWhoLikeIcecream = students.filter(student => student.likesIcecream)
+
+    // console.log(studentsWhoLikeIcecream)
+
+    // Q - Return array of only those students who like ice cream and are from batch 9
+    // let studentsWhoLikeIcecream = students.filter(student => student.likesIcecream && student.batch === 9)
+    // console.log(studentsWhoLikeIcecream)
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
