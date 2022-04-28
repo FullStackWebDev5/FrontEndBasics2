@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Object Constructors</title>
+  <script>
+    // Object Constructor - Template/ Blueprint for objects
+    function Student(name, batch, place, sayHi) { // Use Pascal case for standard
+      this.name = name
+      this.batch = batch
+      this.place = place
+      this.sayHi = sayHi
+    }
+
+    let sayHi = function (){
+      console.log('Hi')
+    }
+
+    let pappu = new Student('Pappu', 11, 'Kolkata', sayHi)
+    let swapneel = new Student('Swapneel', 7, 'Mumbai', sayHi)
+    let sumit = new Student('Pappu', 9, 'Delhi', sayHi)
+
+    pappu.sayHi()
+    console.log(swapneel)
+    console.log(sumit)
+
+    // let pappu = {
+    //   name: 'Pappu',
+    //   batch: 11,
+    //   place: 'Kolkata',
+    // }
+
+    // let swapneel = {
+    //   name: 'Swapneel',
+    //   batch: 7,
+    //   place: 'Mumbai',
+    // }
+
+    // let sumit = {
+    //   name: 'Sumit',
+    //   batch: 9,
+    //   place: 'Delhi',
+    // }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
