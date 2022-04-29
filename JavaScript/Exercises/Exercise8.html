@@ -66,32 +66,34 @@
             - batch
             - average marks secured
 
-       Expected O/P - 
-       let studentsWithCalculatedMarks = [
-        {
-          name: 'Vaishnavi',
-          batch: 8,
-          averageMarks: 84
-        }, {
-          name: 'Abhishek',
-          batch: 10,
-          averageMarks: 68.9
-        }, {
-          name: 'Pappu',
-          batch: 10,
-          averageMarks: 78.8
-        }, {
-          name: 'Ram',
-          batch: 7,
-          averageMarks: 48.6
-        }, {
-          name: 'Shyam',
-          batch: 9,
-          averageMarks: 74.8
-        }
-       ]
+      Expected O/P - 
+      //  let studentsWithCalculatedMarks = [
+      //   {
+      //     name: 'Vaishnavi',
+      //     batch: 8,
+      //     averageMarks: 84
+      //   }, {
+      //     name: 'Abhishek',
+      //     batch: 10,
+      //     averageMarks: 69
+      //   }, {
+      //     name: 'Pappu',
+      //     batch: 10,
+      //     averageMarks: 78.8
+      //   }, {
+      //     name: 'Ram',
+      //     batch: 7,
+      //     averageMarks: 48.6
+      //   }, {
+      //     name: 'Shyam',
+      //     batch: 9,
+      //     averageMarks: 74.8
+      //   }
+      //  ]
     */
 
+    /* ---------------------------------------------------------------- */
+    // Method 1
     // let studentsWithCalculatedMarks = [];
 
     // for (let i = 0; i < students.length; i++) {
@@ -120,6 +122,47 @@
     // }
     
     // console.log(studentsWithCalculatedMarks);
+
+    /* ---------------------------------------------------------------- */
+    // Method 2 (a)
+    // let studentsWithCalculatedMarks = students.map(function(student, index) {
+    //   let sum = 0
+    //   for (let singleMarks of Object.values(student.marks)){
+    //     sum = sum + singleMarks
+    //   }
+    //   return {
+    //     name: student.name,
+    //     batch: student.batch,
+    //     averageMarks: sum / Object.values(student.marks).length
+    //   }
+    // })
+
+    // console.log(studentsWithCalculatedMarks)
+
+    /* ---------------------------------------------------------------- */
+    // Method 2 (b)
+    // let studentsWithCalculatedMarks = students.map(function(student, index) {
+    //   let marks = Object.values(student.marks)
+    //   return {
+    //     name: student.name,
+    //     batch: student.batch,
+    //     averageMarks: marks.reduce(function (total, singleMarks) {
+    //       return total + singleMarks
+    //     }, 0) / marks.length
+    //   }
+    // })
+
+    // console.log(studentsWithCalculatedMarks)
+
+    /* ---------------------------------------------------------------- */
+    // Method 2 (b)
+    let studentsWithCalculatedMarks = students.map(student => ({
+      name: student.name,
+      batch: student.batch,
+      averageMarks: Object.values(student.marks).reduce((total, singleMarks) => total + singleMarks, 0) / Object.values(student.marks).length
+    }))
+
+    console.log(studentsWithCalculatedMarks)
   </script>
 </head>
 
