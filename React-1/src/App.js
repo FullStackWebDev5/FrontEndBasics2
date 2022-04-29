@@ -18,7 +18,7 @@ class App extends Component {
 export default App;
 
 /*
-  REACT:
+  REACT: [Virtual DOM, SPA - Single Page Application]
   Declarative Library
   - Tell react WHAT to do
   - Don't tell react HOW to do, react handles it
