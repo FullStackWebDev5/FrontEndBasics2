@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Sum</title>
+  <script>
+    let S = [-1, 2, 1, -4] // -4, -1, 1, 2
+
+    function threeSum(arr, target) {
+      let len = arr.length
+
+      let closestSum = arr[0] + arr[1] + arr[2]
+
+      for (let i = 1; i < len; i++) {
+        for (let j = i + 1; j < len; j++) {
+          for (let k = j + 1; k < len; k++) {
+            let currentSum = arr[i] + arr[j] + arr[k]
+
+            if (Math.abs(target - currentSum) < Math.abs(target - closestSum)) {
+              closestSum = currentSum
+            }
+          }
+        }
+      }
+      return closestSum;
+    }
+
+    console.log(threeSum(S, 1))
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
