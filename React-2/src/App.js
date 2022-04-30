@@ -1,7 +1,8 @@
 import "./App.css";
 // import ChildComponent from "./components/ChildComponent";
 // import StudentIntroduction from './components/StudentIntroduction';
-import ClassComponent1 from './components/ClassComponent1';
+// import ClassComponent1 from './components/ClassComponent1';
+import Counter from './components/Counter'
 
 function App() {
   return (
@@ -40,8 +41,9 @@ function App() {
         batchNo={6}
         hobbies={["Stamp Collection", "Programming", "Reading Novels", "Swimming"]}
       /> */}
-      <ClassComponent1 message='JavaScript' />
-      <ClassComponent1 message='React' />
+      {/* <ClassComponent1 message='JavaScript' /> */}
+      {/* <ClassComponent1 message='React' /> */}
+      <Counter />
     </div>
   );
 }
@@ -56,11 +58,19 @@ export default App;
 // 1. Any change in 'props'
 // 2. Any change in 'state'
 
+/* state vs props:
+    1. State is local value for the component
+       Props are sent from parent component down to the child component */
+
 // props -> Parent Component to the Child Component (One-way data-binding)
 
 // In function based components - you can relate props with parameters
 
-// Class Based Components v/s Function based components
-// 1. a) 'this' dependency in class based components, no 'this' keyword dependecy in functional components
-// 1. b) Need to type releatively extra code for each class based component (extends, constructor, super)
-// 2. Class based components use render method, function based components return directly
+/* Class Based Components v/s Function based components
+1. a) 'this' dependency in class based components, no 'this' keyword dependecy in functional components
+   b) Need to type releatively extra code for each class based component (extends, constructor, super)
+2. Class based components use render method, function based components return directly
+3. State could only be created in Class based components
+    - Because of that, only Class based components were used for stateful logic/code, functional components were use for stateless logic
+    - With the coming of hooks, you can now create states in functional components
+*/
