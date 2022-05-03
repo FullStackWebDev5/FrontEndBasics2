@@ -2,7 +2,9 @@ import "./App.css";
 // import ChildComponent from "./components/ChildComponent";
 // import StudentIntroduction from './components/StudentIntroduction';
 // import ClassComponent1 from './components/ClassComponent1';
-import Counter from './components/Counter'
+// import Counter from './components/Counter'
+// import BulbOnOff from './components/BulbOnOff'
+import ClassComponent2 from './components/ClassComponent2'
 
 function App() {
   return (
@@ -43,7 +45,9 @@ function App() {
       /> */}
       {/* <ClassComponent1 message='JavaScript' /> */}
       {/* <ClassComponent1 message='React' /> */}
-      <Counter />
+      {/* <Counter /> */}
+      {/* <BulbOnOff /> */}
+      <ClassComponent2 />
     </div>
   );
 }
