@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ChildComponentExample from './ChildComponentExample'
 
 export class ClassComponent2 extends Component {
   constructor(props) {
@@ -6,7 +7,21 @@ export class ClassComponent2 extends Component {
     console.log("Inside the constructor");
     this.state = {
       products: [],
+      count: 0,
+      showChildComponent: true,
     };
+  }
+
+  incrementCounter = () => {
+    this.setState((prevState) => ({
+      count: prevState.count + 1
+    }))
+  }
+
+  showHideChildComponent = () => {
+    this.setState((prevState) => ({
+      showChildComponent: !prevState.showChildComponent
+    }))
   }
 
   componentDidMount() {
@@ -32,7 +47,7 @@ export class ClassComponent2 extends Component {
           },
         ],
       });
-    }, 5000);
+    }, 10000);
   }
 
   componentDidUpdate(){
@@ -41,7 +56,7 @@ export class ClassComponent2 extends Component {
 
   render() {
     console.log("Inside the render method");
-    let { products } = this.state;
+    let { products, count, showChildComponent } = this.state;
     return (
       <div>
         <h1>Products</h1>
@@ -53,6 +68,13 @@ export class ClassComponent2 extends Component {
             </li>
           ))}
         </ul>
+        <h2>{count}</h2>
+        <button onClick={this.incrementCounter} >Increment Count</button>
+        <br />
+        <br />
+        {showChildComponent && <ChildComponentExample />}
+        <br />
+        <button onClick={this.showHideChildComponent} >Show/Hide Child Component</button>
       </div>
     );
   }
@@ -67,10 +89,23 @@ export default ClassComponent2;
     componentDidMount - This method will execute only when the component has mounted successfully
 
     Eg: For making API Calls (Component depended on certain data)
+
+  ------------------------------------------------ 
   2. Updating - If any change in props (New props) or state (setState), the component will apply new state and props and re-render
     (Any life milestones in case of Human)
     componentDidUpdate - This method will execute only when the component has updated successfully
-  3. Unmounting
+
+    Eg: Execute certain code whenever there is any change in state/props
+
+  ------------------------------------------------ 
+
+  3. Unmounting - When component is removed from the DOM
+    (Death in case of Human)
+    componentWillUnmount - This method can be used to execute code before the componet is just about to unmount
+
+    Eg: Reset the state / Reset the form inputs before unmounting the component
+
+  ------------------------------------------------ 
 
 
   render -> process in which components are evaluated and respective html is generated out of it and pushed inside the DOM
