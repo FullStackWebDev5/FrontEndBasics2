@@ -71,10 +71,11 @@ export default App;
 // In function based components - you can relate props with parameters
 
 /* Class Based Components v/s Function based components
-1. a) 'this' dependency in class based components, no 'this' keyword dependecy in functional components
-   b) Need to type releatively extra code for each class based component (extends, constructor, super)
+1. a) 'this' keyword dependency in class based components, no 'this' keyword dependecy in functional components
+   b) Need to type releatively extra lines of code for each class based component (extends, constructor, super)
 2. Class based components use render method, function based components return directly
 3. State could only be created in Class based components
-    - Because of that, only Class based components were used for stateful logic/code, functional components were use for stateless logic
+    - Because of that, only Class based components were used for stateful logic/code, functional components were use for stateless logic (this.state, this.setState)
     - With the coming of hooks, you can now create states in functional components
+    (useState)
 */
