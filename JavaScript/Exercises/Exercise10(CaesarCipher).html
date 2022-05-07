@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const lookup = {
+      'A': 'N', 'B': 'O', 'C': 'P', 'D': 'Q',
+      'E': 'R', 'F': 'S', 'G': 'T', 'H': 'U',
+      'I': 'V', 'J': 'W', 'K': 'X', 'L': 'Y',
+      'M': 'Z', 'N': 'A', 'O': 'B', 'P': 'C',
+      'Q': 'D', 'R': 'E', 'S': 'F', 'T': 'G',
+      'U': 'H', 'V': 'I', 'W': 'J', 'X': 'K',
+      'Y': 'L', 'Z': 'M'
+    }
+
+    const encode = (inputString) => {
+      const lookupKeys = Object.keys(lookup)
+      const lookupValues = Object.values(lookup)
+      const codeArr = inputString.split("")
+      let encodedArr = codeArr.map(codeArrChar => {
+        let index = lookupValues.findIndex((element) => element === codeArrChar)
+        return lookupKeys[index]
+        // for (let key in lookup)
+        //   if(lookup[key] === codeArrChar)
+        //     return key
+      })
+      return encodedArr.join("")
+    }
+
+    const decode = (encodedStr) => {
+      const codeArr = encodedStr.split("")
+      let decodedArr = codeArr.map(codeArrChar => lookup[codeArrChar])
+      return decodedArr.join("")
+    }
+
+    // const decode = (encodedStr) => encodedStr.split("").map(codeArrChar => lookup[codeArrChar]).join("")
+
+    console.log(encode('FREELOVEACCIOJOB'))
+    console.log(decode('SERRYBIRNPPVBWBO'))
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

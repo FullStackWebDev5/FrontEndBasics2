@@ -9,20 +9,46 @@
   <script>
     let S = [-1, 2, 1, -4] // -4, -1, 1, 2
 
+    // METHOD - 1
+    // function threeSum(arr, target) {
+    //   let len = arr.length
+
+    //   let closestSum = arr[0] + arr[1] + arr[2]
+
+    //   for (let i = 1; i < len; i++) {
+    //     for (let j = i + 1; j < len; j++) {
+    //       for (let k = j + 1; k < len; k++) {
+    //         let currentSum = arr[i] + arr[j] + arr[k]
+
+    //         if (Math.abs(target - currentSum) < Math.abs(target - closestSum)) {
+    //           closestSum = currentSum
+    //         }
+    //       }
+    //     }
+    //   }
+    //   return closestSum;
+    // }
+
+    // METHOD - 2
     function threeSum(arr, target) {
-      let len = arr.length
+      arr.sort((a, b) => a - b)  // -4, -1, 1, 2
+      let closestSum = Number.POSITIVE_INFINITY;
 
-      let closestSum = arr[0] + arr[1] + arr[2]
+      //  i  ptr1 ptr2
+      //  1   2    3
+      // -1   1    2
 
-      for (let i = 1; i < len; i++) {
-        for (let j = i + 1; j < len; j++) {
-          for (let k = j + 1; k < len; k++) {
-            let currentSum = arr[i] + arr[j] + arr[k]
+      for (let i = 0; i < arr.length - 2; i++) {
+        let ptr1 = i + 1, ptr2 = arr.length - 1; 
+        while (ptr1 < ptr2) {
+          let currentSum = arr[i] + arr[ptr1] + arr[ptr2] // 2
+          if (Math.abs(target - currentSum) < Math.abs(target - closestSum))
+            closestSum = currentSum
 
-            if (Math.abs(target - currentSum) < Math.abs(target - closestSum)) {
-              closestSum = currentSum
-            }
-          }
+          if (currentSum > target)
+            ptr2--
+          else
+            ptr1++
         }
       }
       return closestSum;
