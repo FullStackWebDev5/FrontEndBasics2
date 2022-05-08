@@ -116,6 +116,7 @@ const SignUpWithValidation = () => {
 
   return (
     <Form style={{ width: "500px", margin: "50px auto" }}>
+      <h1 className="display-4">Sign Up</h1>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Name</Form.Label>
         <Form.Control
