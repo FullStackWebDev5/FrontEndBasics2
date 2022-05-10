@@ -11,6 +11,8 @@ import Login from './components/Login'
 import SignUpWithValidation from './components/Signup/SignUpWithValidation'
 import About from './components/About'
 import Contact from './components/Contact'
+import Component404 from './components/404'
+import PhotoEnlarged from './components/PhotoEnlarged'
 
 const App = () => {
   return (
@@ -23,6 +25,10 @@ const App = () => {
           <Route path='/signup' element={<SignUpWithValidation />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          {/* Dynamic route (requires param(s)) to be sent after : */}
+          <Route path='/photos/:id' element={<PhotoEnlarged />} />
+          {/* No-match route */}
+          <Route path='*' element={<Component404/>} />
         </Routes>
       </Router>
     </div>

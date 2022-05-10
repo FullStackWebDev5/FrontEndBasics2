@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
 import "./Photos.css";
 import axios from "axios";
+import { Link } from 'react-router-dom'
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
-  const [showAllPhotos, setShowAllPhotos] = useState(false);
 
   useEffect(() => {
     axios
@@ -25,20 +25,10 @@ const Photos = () => {
             Explore range of images from Unsplash
           </p>
         </Col>
-        <Col md={2}>
-          <Button
-            variant="dark"
-            size="lg"
-            onClick={() => setShowAllPhotos(!showAllPhotos)}
-          >
-            {showAllPhotos ? "Hide" : "Show"} all photos
-          </Button>
-        </Col>
       </Row>
       <hr></hr>
       <Row>
-        {showAllPhotos &&
-          photos.map((photo) => (
+        {photos.length ? photos.map((photo) => (
             <Col md={3} className="photos-card" key={photo.id}>
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={photo.download_url} />
@@ -48,13 +38,16 @@ const Photos = () => {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </Card.Text>
-                  <a className="btn btn-dark" href={photo.url}>
-                    View more details
+                  <a className="btn btn-dark" href={photo.url}  style={{    marginRight: '10px'}}>
+                    View details
                   </a>
+                  <Link className="btn btn-dark" to={`/photos/${photo.id}`}>
+                    View enlarged
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
-          ))}
+          )) : <Spinner animation="border" />}
       </Row>
     </Container>
   );
