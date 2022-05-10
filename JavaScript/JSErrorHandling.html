@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Error Handling</title>
+  <script>
+    // console.log('Hello')
+    // let sum = eval('1+5kdkndk')
+    // console.log('World')
+    // console.log(sum)
+
+    // Syntax -
+    // try {
+    //   // Code with probable run-time errors
+    // } catch (err) {
+    //   // If any error exists, it will be caught by the catch block
+    // }
+    /*
+      try -> if no errors
+      catch -> errors exits, has an error property and handles the caught error
+      finally -> Use this block to execute in both the cases (failure/success)
+      throw -> can be used to create and report user defined errors
+    */
+
+    // console.log('Hello')
+    // try {
+    //   let sum = eval('1+5kdkndk')
+    //   console.log(sum)
+    // } catch (err) {
+    //   console.log(err)
+    // }
+    // console.log('World')
+
+    // console.log('Hello')
+    // try {
+    //   let sum = eval('1+5kdkndk')
+    //   console.log(sum)
+    // } catch (err) {
+    //   console.log(err)
+    // } finally {
+    //   console.log('Finally')
+    // }
+    // console.log('World')
+
+    console.log('Hello')
+
+    let input = Number(prompt('Enter a number'))
+    try {
+      if(input < 0)
+        throw new Error('The input number cannot be negative')
+      // factorial code here
+    } catch (err) {
+      console.log(err)
+    }
+
+    console.log('World')
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -40,7 +40,7 @@
     // abc(5, 6)
 
     /* --------------------------------------------------------------- */
-    // 5. Power of Operator
+    // 5. Exponential Operator
     // console.log(5 ** 2)
 
     /* --------------------------------------------------------------- */
@@ -236,6 +236,84 @@
     // let mayank = JSON.parse(JSON.stringify(rajesh))
     // mayank.address.city = 'Pune'
     // console.log(rajesh)
+
+    /* --------------------------------------------------------------- */
+    // 9. Destructuring
+    // let obj = {
+    //   x: 1,
+    //   y: 2
+    // }
+    // let { x } = obj
+    // console.log(x)
+
+    // let rajesh = {
+    //   name: 'Rajesh',
+    //   batch: 10,
+    //   techStack: 'MERN',
+    //   address: {
+    //     city: 'Mumbai',
+    //     state: 'Maharashtra',
+    //     country: 'India',
+    //   }
+    // }
+
+    // let { batch, techStack, address } = rajesh
+    // console.log(batch, techStack)
+    // let { city, state } = address
+    // console.log(city, state)
+
+    // let { 
+    //   batch, 
+    //   techStack, 
+    //   address: { 
+    //     city, 
+    //     state 
+    //   } 
+    // } = rajesh
+
+    // console.log(batch, techStack, city, state)
+
+    // let arr = [1, 2, 3, 4]
+    // let [first, second, third] = arr
+    // console.log(first, second, third)
+
+    // let arr = [1, 2, ['Rishabh', 'Naresh'] , 3, 4]
+    
+    // let [first, second, third, fourth, fifth] = arr
+    // let [third0, third1] = third
+
+    // let [first, second, [third0, third1], fourth, fifth] = arr
+    // console.log(first, second, third0, third1, fourth, fifth)
+
+    // var a = 1
+    // var b = 2
+    // console.log(a, b)
+
+    // Swap the values of these two variables
+    // Using an extra variable
+    // let temp = a
+    // a = b
+    // b = temp
+
+    // Without using an extra variable
+    // a = a + b // 3
+    // b = a - b // 3 - 2 = 1
+    // a = a - b // 3 - 1 = 2
+
+    // Using object property assignment and destructuring concept
+    // var [b, a] = [a, b]
+    // console.log(a, b)
+
+    /* --------------------------------------------------------------- */
+    // 10. Object.entries()
+
+    // let rajesh = {
+    //   name: 'Rajesh',
+    //   batch: 10,
+    //   techStack: 'MERN',
+    // }
+
+    // console.log(Object.entries(rajesh))
   </script>
 </head>
 <body>
