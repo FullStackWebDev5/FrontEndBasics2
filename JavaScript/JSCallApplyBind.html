@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Call Apply Bind</title>
+  <script>
+    // JavaScript Function Methods - call, apply, bind 
+
+    /* 
+      Arrays 
+      Properties: length
+      Methods: push, pop, shift, unshift, map, filter, forEach, etc
+    */
+
+    /* 
+      Function 
+      Properties: code, name(optional)
+      Methods: call, apply, bind
+    */
+
+    // let ram = {
+    //   firstName: 'Ram',
+    //   lastName: 'Charan',
+    //   batch: 10,
+    //   displayFullName: function () {
+    //     return `${this.firstName} ${this.lastName}`
+    //   }
+    // }
+
+    // let vaishnavi = {
+    //   firstName: 'Vaishnavi',
+    //   lastName: 'Gupta',
+    //   batch: 9,
+    //   displayFullName: function () {
+    //     return `${this.firstName} ${this.lastName}`
+    //   }
+    // }
+
+    // console.log(ram.displayFullName())
+    // console.log(vaishnavi.displayFullName())
+
+    // let ram = {
+    //   firstName: 'Ram',
+    //   lastName: 'Charan',
+    //   batch: 10,
+    //   displayFullName: function () {
+    //     return `${this.firstName} ${this.lastName}`
+    //   }
+    // }
+
+    // let vaishnavi = {
+    //   firstName: 'Vaishnavi',
+    //   lastName: 'Gupta',
+    //   batch: 9,
+    //   displayFullName: function () {
+    //     return `${this.firstName} ${this.lastName}`
+    //   }
+    // }
+
+    // console.log(ram.displayFullName())
+    // console.log(vaishnavi.displayFullName())
+
+    /* ------------------------------ */
+
+    function displayFullName() {
+      return `${this.firstName} ${this.lastName}`
+    }
+
+    function greetUser(wish) {
+      return `${wish}, ${this.firstName} ${this.lastName}!`
+    }
+
+    let ram = {
+      firstName: 'Ram',
+      lastName: 'Charan',
+      batch: 10,
+    }
+
+    let vaishnavi = {
+      firstName: 'Vaishnavi',
+      lastName: 'Gupta',
+      batch: 9,
+    }
+
+    // console.log(displayFullName.call(ram))
+    // console.log(displayFullName.call(vaishnavi))
+
+    // console.log(greetUser.call(ram, 'Good morning'))
+    // console.log(greetUser.call(vaishnavi, 'Good evening'))
+
+    /*
+      call 
+      - Attach object to the function and then invoke
+      - It will be invoked immediately
+      - Arguments for that function are passed separated by commas after the object
+      - If number of paramaters in that function is x, we'll pass x+1 arguments (1 arguments is for the object to attach)
+    */
+
+    /*
+      apply 
+      - Attach object to the function and then invoke
+      - It will be invoked immediately
+      - Arguments for that function are 'passed as an array of values' separated by commas after the object
+    */
+
+    /*
+      bind
+      - Attach object to the function
+      - Does not invoke immediately, rather it will return an updated function with attached object reference
+    */
+
+    // console.log(greetUser.apply(ram, ['Good morning']))
+    // console.log(greetUser.apply(vaishnavi, ['Good evening']))
+
+    // let displayFullNameWithRamObjectReference = displayFullName.bind(ram)
+    // console.log(displayFullNameWithRamObjectReference())
+
+    // let greetUserWithVaishnaviObjectReference = greetUser.bind(vaishnavi)
+    // console.log(greetUserWithVaishnaviObjectReference('Good morning'))
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,6 +1,7 @@
 let passwordStoredInDB = ''
 
 let signupInputPasswordField = document.getElementById('sign-up-input')
+let passwordStrength = document.getElementById('password-strength')
 let signUpValid = document.getElementById('sign-up-valid')
 let loginInputPasswordField = document.getElementById('login-input')
 let loginValid = document.getElementById('login-valid')
@@ -44,6 +45,24 @@ const decode = (encodedStr) => {
   const codeArr = encodedStr.split("")
   let decodedArr = codeArr.map(codeArrChar => lookup[codeArrChar])
   return decodedArr.join("")
+}
+
+
+
+const checkPasswordStrength = () => {
+  if(signupInputPasswordField.value.length < 5){
+    passwordStrength.style.display = 'block'
+    passwordStrength.innerText = 'Weak'
+    passwordStrength.style.color = 'red'
+  } else if (signupInputPasswordField.value.length < 8) {
+    passwordStrength.style.display = 'block'
+    passwordStrength.innerText = 'Moderate'
+    passwordStrength.style.color = 'orange'
+  } else {
+    passwordStrength.style.display = 'block'
+    passwordStrength.innerText = 'Strong'
+    passwordStrength.style.color = 'green'
+  }
 }
 
 const signUp = () => {

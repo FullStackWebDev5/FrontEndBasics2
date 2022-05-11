@@ -11,7 +11,8 @@
 
 <body>
   <div>
-    <input type="password" placeholder="Create your password" id="sign-up-input">
+    <input type="password" placeholder="Create your password" id="sign-up-input" onkeyup="checkPasswordStrength()">
+    <p id="password-strength"></p>
     <p class="valid" id="sign-up-valid">Password saved successfully!</p>
     <button onclick="signUp()">Sign Up</button>
   </div>
