@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Closures</title>
+	<script>
+		/* 
+			Nested/Inner blocks always have access to the outer scope variables 
+			('lexical scope') 
+		*/
+
+		// let x = 5
+		// {
+		// 	console.log(x) 
+		// }
+
+		/*
+			Higher order functions -
+			1. If a function is declared or returned from another function
+			2. If a function definition is passed as a argument (callback)
+		*/
+
+		/*
+			Closures 
+			- Inner functions can have access to the outer scope variables (since those are present in the lexical scope/environment)
+			- Refers to 'Bundle of inner function along with its lexical environment'
+			- Inner functions continue to have access to the outer scope variables even after the outer scope has finished
+
+		*/
+
+		// abc -> Outer Function
+		// const abc = () => {
+		// 	let firstName = 'Sunil'
+		// 	let lastName = 'Yadav'
+
+		// 	// def -> Inner Function
+		// 	const def = () => {
+		// 		console.log(firstName + ' ' + lastName)
+		// 	}
+		// 	def()
+		// }
+		// abc()
+
+
+		// Outer Function
+		// const abc = () => {
+		// 	let firstName = 'Sunil'
+		// 	let lastName = 'Yadav'
+
+		// 	// Inner Function (Returning)
+		// 	return () => {
+		// 		console.log(firstName + ' ' + lastName)
+		// 	}
+		// }
+
+		// // Outer Function invoked - returned inner function stored in def
+		// let def = abc()
+
+		// // Inner Function invoked
+		// def()
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

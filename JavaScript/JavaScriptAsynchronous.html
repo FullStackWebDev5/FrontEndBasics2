@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asynchronous JS</title>
+	<script>
+		/*
+		Synchronous code runs in sequence. This means that each operation must wait for the previous one to complete before executing.
+
+		Asynchronous code runs in parallel. This means that an operation can occur while another one is still being processed.
+		*/
+
+		// console.log(1)
+		// console.log(2)
+		// console.log(3)
+		// console.log(4)
+		// console.log(5)
+		
+		/*
+			setTimeout - Used to execute the block of code after certain time interval
+			setTimeout(function() {
+				// code
+			}, milliseconds)
+		*/
+
+		// setTimeout(() => {
+		// 	console.log('Data Loaded')
+		// }, 5000)
+
+		// console.log(1)
+		// console.log(2)
+		// setTimeout(() => {
+		// 	console.log(3)
+		// }, 0)
+		// console.log(4)
+		// console.log(5)
+
+		/*
+			setInterval - Used to execute the block of code repeatedly after fixed time intervals
+			setInterval(function() {
+				// code
+			}, milliseconds)
+		*/
+
+		// setInterval(() => {
+		// 	console.log('Hello')
+		// }, 5000)
+	</script>
+</head>
+<body>
+	<h1>Current Date and Time</h1>
+	<h1 id="display-date"></h1>
+	<script>
+		setInterval(() => {
+			document.getElementById('display-date').innerText = new Date().toLocaleString().replace(',', ' ');
+		}, 1000)
+	</script>
+</body>
+</html>
