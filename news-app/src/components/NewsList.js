@@ -1,8 +1,19 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
-function NewsList() {
+function NewsList({news}) {
   return (
-    <div>NewsList</div>
+		<>
+			<div>NewsList</div>
+			<ul>
+				{news.map((singleNews, index) => (
+					<li key={index}>
+						<Link to={`/news/${index}`} >
+							{singleNews.title}
+						</Link>
+					</li>
+				))}
+			</ul>
+		</>
   )
 }
 
