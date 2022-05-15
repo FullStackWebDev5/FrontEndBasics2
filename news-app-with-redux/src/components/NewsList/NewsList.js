@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NewsList.css";
+import moment from "moment";
 
 function NewsList({ news }) {
   return (
@@ -11,17 +12,17 @@ function NewsList({ news }) {
           <Card.Header>{singleNews.source.name}</Card.Header>
           <Card.Body>
             <Card.Title>{singleNews.title}</Card.Title>
-            <Card.Text>{singleNews.content}</Card.Text>
+            <Card.Text>{singleNews.description}</Card.Text>
             <Link
               className="btn btn-dark"
               variant="primary"
               to={`/news/${index}`}
             >
-              Go somewhere
+              Read more
             </Link>
           </Card.Body>
           <Card.Footer className="text-muted">
-            {singleNews.publishedAt}
+            {moment(singleNews.publishedAt).format('MMMM Do YYYY, h:mm:ss a')}
           </Card.Footer>
         </Card>
       ))}
