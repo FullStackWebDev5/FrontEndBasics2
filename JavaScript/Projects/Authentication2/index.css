@@ -1,0 +1,24 @@
+.navbar-brand, .nav-link:hover {
+	cursor: pointer;
+}
+
+#home-page {
+	display: block;
+}
+
+#signup-page {
+	display: none;
+	padding: 50px;
+	text-align: center;
+}
+
+#login-page {
+	display: none;
+	padding: 50px;
+	text-align: center;
+}
+
+#valid-alert, #invalid-alert{
+	display: none;
+	margin-top: 10px;
+}
