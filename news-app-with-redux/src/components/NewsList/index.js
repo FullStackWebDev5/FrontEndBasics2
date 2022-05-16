@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./NewsList.css";
+import "./index.css";
 import moment from "moment";
 
 function NewsList({ news }) {

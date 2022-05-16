@@ -1,0 +1,1 @@
+export { incrementCounter } from './count/action'

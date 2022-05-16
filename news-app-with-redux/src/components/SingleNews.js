@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import "./NewsList/NewsList.css";
+import "./NewsList/index.css";
 import moment from "moment";
 
 function SingleNews({ news }) {

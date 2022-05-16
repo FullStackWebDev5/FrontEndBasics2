@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import NewsList from "./components/NewsList/NewsList";
+import NewsList from "./components/NewsList";
 import SingleNews from "./components/SingleNews";
 import Count from "./components/Count";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
