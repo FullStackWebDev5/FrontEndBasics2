@@ -1,8 +1,9 @@
 import './App.css';
-import Counter from './components/Counter'
+import Counter from './components/CounterWithHooks'
 import DisplayHide from './components/DisplayHide'
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import HOC from './components/HOC'
 
 function App() {
   return (
@@ -10,6 +11,10 @@ function App() {
 			<Provider store={store}>
 				<Counter />
 				<DisplayHide />
+				<br />
+				<HOC component={Counter} />
+				<br />
+				<HOC component={DisplayHide} />
 			</Provider>
     </div>
   );
