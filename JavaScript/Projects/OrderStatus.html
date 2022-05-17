@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Order Status</title>
+	<script>
+		/*
+			Order placed 
+			After 2s -> Chef received the order and started preparing
+			After 10s -> Pizza Sauce added
+			After 5s -> First layer of cheeze added
+			After 12s -> Toppings added
+			After 5s -> Second layer of cheeze added
+			After 15s -> Pizza baked!
+			After 8s -> Oregano added and packed
+			After 2s -> Package received at counter
+			The order is ready and handed over to the Zomato guy!
+		*/
+
+		// CALLBACK HELL
+		const executeOrder = (callback, orderNo) => {
+			console.log(orderNo + ': Order Placed')
+
+			setTimeout(() => {
+				console.log(orderNo + ': Chef received the order and started preparing')
+
+				setTimeout(() => {
+					console.log(orderNo + ': Pizza Sauce added')
+
+					setTimeout(() => {
+						console.log(orderNo + ': First layer of cheeze added')
+
+						setTimeout(() => {
+							console.log(orderNo + ': Toppings added')
+
+							setTimeout(() => {
+								console.log(orderNo + ': Second layer of cheeze added')
+								
+								setTimeout(() => {
+									console.log(orderNo + ': Pizza baked!')
+
+									setTimeout(() => {
+										console.log(orderNo + ': Oregano added and packed')
+
+										setTimeout(() => {
+											console.log(orderNo + ': Package received at counter')
+											callback()
+										}, 2000)
+
+									}, 8000)
+
+								}, 15000)
+
+							}, 5000)
+
+						}, 12000)
+
+					}, 5000)
+
+				}, 10000)
+				
+			}, 2000)
+		}
+
+		// executeOrder(() => {
+		// 	console.log('The order is ready and handed over to the Zomato guy!')
+		// })
+	</script>
+</head>
+<body>
+	<button onClick="executeOrder(() => {
+		console.log('The order is ready and handed over to the Zomato guy!')
+	}, 1)">Execute Order 1</button>
+	<button onClick="executeOrder(() => {
+		console.log('The order is ready and handed over to the Zomato guy!')
+	}, 2)">Execute Order 2</button>
+</body>
+</html>
