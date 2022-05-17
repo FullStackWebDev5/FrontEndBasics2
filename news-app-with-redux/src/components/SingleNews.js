@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import "./NewsList/index.css";
 import moment from "moment";
+import { useSelector } from "react-redux"
 
-function SingleNews({ news }) {
+const SingleNews = () => {
+	const news = useSelector((state) => state.news)
   const { index } = useParams();
   const singleNews = news[index];
   return (

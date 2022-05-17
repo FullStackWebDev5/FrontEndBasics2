@@ -1,0 +1,1 @@
+export { fetchNews } from './news/action'
