@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Order Status</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="index.js"></script>
+</head>
+<body>
+	<div class="container">
+		<input type="text" placeholder="Please enter Order ID" id="order-id-input">
+		<button onClick="executeOrder(() => {
+			console.log('The order is ready and handed over to the Zomato guy!')
+		})">EXECUTE</button>
+		<div class="status-block" id="order-placed">
+			Order placed 
+		</div>
+		<div class="status-block" id="chef-received">
+			Chef received the order and started preparing
+		</div>
+		<div class="status-block" id="'pizza-sauce">
+			Pizza Sauce added
+		</div>
+		<div class="status-block" id="first-cheeze">
+			First layer of cheeze added 
+		</div>
+		<div class="status-block" id="toppings-added">
+			Toppings added 
+		</div>
+		<div class="status-block" id="second-cheeze">
+			Second layer of cheeze added
+		</div>
+		<div class="status-block" id="pizza-baked">
+			Pizza baked!
+		</div>
+		<div class="status-block" id="oregano-added">
+			Oregano added and packed
+		</div>
+		<div class="status-block" id="package-counter">
+			Package received at counter
+		</div>
+		<div class="status-block" id="package-handover">
+			The order is ready and handed over to the Zomato guy!
+		</div>
+	</div>
+</body>
+</html>
