@@ -17,7 +17,6 @@ function NavbarComponent() {
         <Nav.Link as={ NavLink } to='/news-list' href="#action1">News</Nav.Link>
         <Nav.Link as={ NavLink } to='/about' href="#action2">About Us</Nav.Link>
 				<Nav.Link as={ NavLink } to='/contact' href="#action2">Contact Us</Nav.Link>
-				<Nav.Link as={ NavLink } to='/count' href="#action2">Count</Nav.Link>
       </Nav>
 			<Nav
 				className="my-2 my-lg-0"

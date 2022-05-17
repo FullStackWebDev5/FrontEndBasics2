@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
-import countReducer from './count/reducer'
+import newsReducer from './news/reducer'
 
-const store = createStore(countReducer)
+const store = createStore(newsReducer)
 
 export default store

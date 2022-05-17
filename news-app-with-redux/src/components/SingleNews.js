@@ -10,6 +10,7 @@ function SingleNews({ news }) {
   return (
 		<Card className="text-center single-news">
 			<Card.Header>{singleNews.source.name}</Card.Header>
+			<Card.Img variant="top" src={singleNews.urlToImage} />
 			<Card.Body>
 				<Card.Title>{singleNews.title}</Card.Title>
 				<Card.Text>{singleNews.content}</Card.Text>

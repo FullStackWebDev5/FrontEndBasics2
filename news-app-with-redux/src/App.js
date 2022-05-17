@@ -4,8 +4,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import NewsList from "./components/NewsList";
 import SingleNews from "./components/SingleNews";
-import Count from "./components/Count";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Container } from 'react-bootstrap'
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
@@ -27,12 +27,13 @@ function App() {
       <Provider store={store}>
         <Router>
           <Navbar />
+					<Container>
           <Routes>
             <Route index element={<Home />} />
             <Route path="/news-list" element={<NewsList news={news} />} />
             <Route path="/news/:index" element={<SingleNews news={news} />} />
-            <Route path="/count" element={<Count />} />
           </Routes>
+					</Container>
         </Router>
       </Provider>
     </div>
