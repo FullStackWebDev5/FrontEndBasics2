@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Row, Card, Spinner } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Row, Col, Card, Spinner, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./index.css";
 import moment from "moment";
@@ -7,17 +7,48 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchNews } from "../../redux";
 
 const NewsList = () => {
+  const [country, setCountry] = useState("in");
   const state = useSelector((state) => state);
   const { news, loading, error } = state;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchNews());
-  }, [dispatch]);
+    dispatch(fetchNews(country));
+  }, [dispatch, country]);
 
   return (
     <>
-      <h1 className="display-4 page-heading">NewsList</h1>
+      <Row className="mt-2 mb-2">
+        <h1
+          className="display-4 page-heading col-md-3 col-xs-12"
+          style={{ textAlign: "left" }}
+        >
+          NewsList
+        </h1>
+        <Col md={6} xs={12} className="header-items">
+          <Form.Control
+            size="lg"
+            type="text"
+            placeholder="Search news"
+            onKeyUp={(e) => dispatch(fetchNews(country, e.target.value))}
+          />
+        </Col>
+        <Col md={3} xs={12} className="header-items">
+          <Form.Select
+            id="countrySelection"
+            className="col-md-4"
+            onChange={(e) => setCountry(e.target.value)}
+          >
+            <option selected value="in">
+              India
+            </option>
+            <option value="us">US</option>
+            <option value="ca">Canada</option>
+            <option value="ae">UAE</option>
+            <option value="ru">Russia</option>
+          </Form.Select>
+        </Col>
+      </Row>
       <Row>
         {!loading ? (
           !error ? (
@@ -45,11 +76,7 @@ const NewsList = () => {
                 >
                   <Card.Title>{singleNews.title}</Card.Title>
                   <Card.Text>{singleNews.description}</Card.Text>
-                  <Link
-                    className="btn btn-dark"
-                    variant="primary"
-                    to={`/news/${index}`}
-                  >
+                  <Link className="btn btn-dark" to={`/news/${index}`}>
                     Read more
                   </Link>
                 </Card.Body>
@@ -74,3 +101,17 @@ const NewsList = () => {
 };
 
 export default NewsList;
+
+/*
+	Pagination Logic
+	Total records - 124
+
+	offset - 0
+	limit - 20
+
+	offset - 20
+	limit - 20
+
+	offset - 40
+	limit - 20
+*/

@@ -5,3 +5,15 @@
 .single-news{
 	margin: 20px auto;
 }
+
+.header-items{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 0;
+}
+
+.header-items .form-select{
+	width: 200px;
+  height: 50px;
+}

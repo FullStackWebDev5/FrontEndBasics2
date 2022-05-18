@@ -18,11 +18,11 @@ export const fetchNewsFailure = (errorMessage) => ({
 	payload: errorMessage
 })
 
-export const fetchNews = () => {
+export const fetchNews = (countryCode = 'in', searchQuery = '') => {
 	return async (dispatch, getState) => {
 		try {
 			dispatch(fetchNewsRequested())
-			let res = await axios.get("https://newsapi.org/v2/top-headlines?apiKey=6d36a43e2ab643af9f2a95f64b8bf2cc&country=in")
+			let res = await axios.get(`https://newsapi.org/v2/top-headlines?apiKey=6d36a43e2ab643af9f2a95f64b8bf2cc&country=${countryCode}&q=${searchQuery}`)
 			dispatch(fetchNewsSuccess(res.data.articles))
 		} catch (error) {
 			dispatch(fetchNewsFailure(error.message))
