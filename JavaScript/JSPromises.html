@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Promises</title>
+</head>
+<body>
+	<script>
+		/*
+			Promises
+			- Handle asynchronous code
+			- Can be used to avoid callback hell scenario
+			- Two properties - state and result (result only in case of resolve/rejected)
+
+			Promises States -
+			1. Pending
+			2. Resolved (Fulfilled)
+			3. Rejected
+
+			2 Ways:
+			Pending -> Resolved -> Setlled
+			Pending -> Rejected -> Settled
+
+			let promise = new Promise ((resolve, reject) => {
+				// 'resolve' method is for fulfilling the promise (Can send a resolvedMessage - optional)
+				// 'reject' method is for rejecting the promise (Can send a rejectedMessage - optional)
+			})
+
+			.then method callback -> For executing in case the promise was resolved 
+			(Can have a parameter for resolvedMessage - optional)
+			.catch method callback -> For executing in case the promise was rejected 
+			(Can have a parameter for rejectedMessage - optional)
+		*/
+
+		/* ---------------------------------------------------------------- */
+
+		// let a = 5
+		// let b = 10
+
+		// let promise = new Promise((resolve, reject) => {
+		// 	if(a === b)
+		// 		resolve()
+		// 	else
+		// 		reject()
+		// })
+
+		// promise.then(() => {
+		// 	console.log('Promise was resolved :)')
+		// }).catch(() => {
+		// 	console.log('Promise was rejected :(')
+		// })
+
+		/* ---------------------------------------------------------------- */
+
+		// let a = 10
+		// let b = 10
+
+		// let promise = new Promise((resolve, reject) => {
+		// 	if(a === b)
+		// 		resolve('The values of a and b are equal')
+		// 	else
+		// 		reject('The values of a and b are unequal')
+		// })
+
+		// promise.then((resolvedMessage) => {
+		// 	console.log('Promise was resolved with the message: ' + resolvedMessage)
+		// }).catch((rejectedMessage) => {
+		// 	console.log('Promise was rejected with the message: ' + rejectedMessage)
+		// })
+
+		/* ---------------------------------------------------------------- */
+
+		// let promise = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve('API Status: 200 Successful')
+		// 	}, 8000)
+
+		// 	// setTimeout(() => {
+		// 	// 	reject('API Failed: 404 Not Found')
+		// 	// }, 8000)
+		// })
+
+		// // console.log(promise)
+
+		// promise.then((resolvedMessage) => {
+		// 	console.log('[RESOLVED] '+ resolvedMessage)
+		// }).catch((rejectedMessage) => {
+		// 	console.log('[REJECTED] '+ rejectedMessage)
+		// })
+
+		// setTimeout(() => {
+		// 	console.log(promise)
+		// }, 9000)
+
+		/* ---------------------------------------------------------------- */
+
+		// function abc(){
+		// 	return 5
+		// }
+		// console.log(abc() + 5)
+
+		// const fetchProfileInformationPromise = () => {
+		// 	console.log('Fetching Profile Information ... ')
+		// 	// return new Promise((resolve, reject) => {
+		// 	// 	setTimeout(() => {
+		// 	// 		resolve('[200] Profile information fetched successfully!')
+		// 	// 	}, 7000)
+		// 	// })
+
+		// 	return new Promise((resolve, reject) => {
+		// 		setTimeout(() => {
+		// 			reject('[404] Failed to load profile information!')
+		// 		}, 7000)
+		// 	})
+		// }
+
+		// const fetchProfileInformation = () => {
+		// 	fetchProfileInformationPromise().then((resolvedMessage) => {
+		// 		console.log('[RESOLVED] '+ resolvedMessage)
+		// 	}).catch((rejectedMessage) => {
+		// 		console.log('[REJECTED] '+ rejectedMessage)
+		// 	})
+		// }
+
+	</script>
+	<button onclick="fetchProfileInformation()">Fetch Profile Information</button>
+</body>
+</html>

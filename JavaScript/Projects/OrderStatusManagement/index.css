@@ -1,17 +1,43 @@
+body{
+	margin: 0;
+}
+
 .container {
 	text-align: center;
+	background-color: #0097ff0f;
+	height: 100vh;
+}
+
+h1{
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 72%, rgba(0,151,255,1) 96%);
+	color: white;
+	margin: 0;
+	padding: 20px;
+}
+
+h2 {
+	font-family: monospace;
 }
 
 input {
 	padding: 10px 20px;
 	width: 500px;
+	margin-top: 20px;
+	border-radius: 20px;
+	font-size: 1.5em;
+	border-color: rgba(9,9,121,1);
+}
+
+input::-webkit-input-placeholder {
+	text-align: center;
 }
 
 button {
+	border: none;
 	display: block;
 	margin: 10px auto;
 	padding: 10px 15px;
-	background-color: black;
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 72%, rgba(0,151,255,1) 96%);
 	color: white;
 	border-radius: 10px;
 	font-size: 1em;
@@ -25,5 +51,17 @@ button:hover{
 div.status-block{
 	border: 1px solid black;
 	padding: 15px 0;
-	margin: 10px;
+	margin: 10px auto;
+	width: 500px;
+	border-radius: 40px;
+	font-size: 1.2em;
+}
+
+div.status-block:last-child{
+	margin-bottom: 50px;
+}
+
+.done{
+	background-color: green;
+	color: white;
 }

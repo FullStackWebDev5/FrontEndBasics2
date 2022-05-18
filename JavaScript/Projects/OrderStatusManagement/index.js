@@ -1,31 +1,37 @@
 // CALLBACK HELL
+const orderIdInfo = document.getElementById('order-id-info')
+let statusBlocks = document.getElementsByClassName('status-block')
+
+const addDoneClass = (index) => statusBlocks[index].classList.add('done')
+
 const executeOrder = (callback) => {
-	const orderNo = document.getElementById('order-id-input').value
-	console.log(orderNo + ': Order Placed')
+	const orderId = document.getElementById('order-id-input').value
+	orderIdInfo.innerText = 'Status for Order ID: ' + orderId
+	addDoneClass(0)
 
 	setTimeout(() => {
-		console.log(orderNo + ': Chef received the order and started preparing')
+		addDoneClass(1)
 
 		setTimeout(() => {
-			console.log(orderNo + ': Pizza Sauce added')
+			addDoneClass(2)
 
 			setTimeout(() => {
-				console.log(orderNo + ': First layer of cheeze added')
+				addDoneClass(3)
 
 				setTimeout(() => {
-					console.log(orderNo + ': Toppings added')
+					addDoneClass(4)
 
 					setTimeout(() => {
-						console.log(orderNo + ': Second layer of cheeze added')
+						addDoneClass(5)
 						
 						setTimeout(() => {
-							console.log(orderNo + ': Pizza baked!')
+							addDoneClass(6)
 
 							setTimeout(() => {
-								console.log(orderNo + ': Oregano added and packed')
+								addDoneClass(7)
 
 								setTimeout(() => {
-									console.log(orderNo + ': Package received at counter')
+									addDoneClass(8)
 									callback()
 								}, 2000)
 
