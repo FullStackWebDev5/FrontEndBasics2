@@ -7,31 +7,32 @@ const addDoneClass = (index) => statusBlocks[index].classList.add('done')
 const executeOrder = (callback) => {
 	const orderId = document.getElementById('order-id-input').value
 	orderIdInfo.innerText = 'Status for Order ID: ' + orderId
-	addDoneClass(0)
+	let x = 0
+	addDoneClass(x++)
 
 	setTimeout(() => {
-		addDoneClass(1)
+		addDoneClass(x++)
 
 		setTimeout(() => {
-			addDoneClass(2)
+			addDoneClass(x++)
 
 			setTimeout(() => {
-				addDoneClass(3)
+				addDoneClass(x++)
 
 				setTimeout(() => {
-					addDoneClass(4)
+					addDoneClass(x++)
 
 					setTimeout(() => {
-						addDoneClass(5)
+						addDoneClass(x++)
 						
 						setTimeout(() => {
-							addDoneClass(6)
+							addDoneClass(x++)
 
 							setTimeout(() => {
-								addDoneClass(7)
+								addDoneClass(x++)
 
 								setTimeout(() => {
-									addDoneClass(8)
+									addDoneClass(x++)
 									callback()
 								}, 2000)
 

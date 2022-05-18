@@ -6,6 +6,7 @@ body{
 	text-align: center;
 	background-color: #0097ff0f;
 	height: 100vh;
+	padding-bottom: 50px;
 }
 
 h1{
@@ -55,10 +56,6 @@ div.status-block{
 	width: 500px;
 	border-radius: 40px;
 	font-size: 1.2em;
-}
-
-div.status-block:last-child{
-	margin-bottom: 50px;
 }
 
 .done{
