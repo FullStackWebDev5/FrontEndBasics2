@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Promises</title>
+	<script>
+		// let studentDataReceivedFromAPI = [{
+		// 	name: 'Shweta',
+		// 	batch: 10
+		// },
+		// {
+		// 	name: 'Satyam',
+		// 	batch: 9
+		// },
+		// {
+		// 	name: 'Anju',
+		// 	batch: 9
+		// },
+		// {
+		// 	name: 'Rajesh',
+		// 	batch: 9
+		// },
+		// {
+		// 	name: 'Rishabh',
+		// 	batch: 10
+		// }]
+
+		// PROMISE CHAINING: (when you return a value from .then() method - returned value again becomes a promise which needs to be handled by .then() chaining)
+		// 1. When first .then handler returns another promise which needs to be handled by chaining another .then()
+		// 2. Return any data from first .then() and that data can be caught by the second .then() handler which is chained to the first one
+
+		// Problem statement - Return only those students from batch 10
+		// const fetchStudentDataPromise = () => {
+		// 	return new Promise((resolve, reject) => {
+		// 		setTimeout(() => {
+		// 			resolve(studentDataReceivedFromAPI)
+		// 		}, 9000)
+		// 	})
+		// }
+
+		// const fetchStudentData = () => {
+		// 	fetchStudentDataPromise().then((res) => {
+		// 		return res.filter(student => student.batch === 10) // Filtering logic
+		// 	}).then((studentsOfBatch10) => {
+		// 		console.log(studentsOfBatch10) // Display logic
+		// 	}).catch((err) => {
+		// 		console.log(err)
+		// 	})
+		// }
+
+		/* ---------------------------------------------------------------- */
+
+		// let promise = new Promise((resolve, reject) => {
+		// 	resolve('A')
+		// })
+
+		// promise.then(resolvedMessage => {
+		// 	return resolvedMessage + 'B'
+		// }).then(updatedMessage => {
+		// 	return updatedMessage + 'C'
+		// }).then(updatedMessage => {
+		// 	console.log(updatedMessage)
+		// }).catch(rejectedMessage => {
+		// 	console.log(rejectedMessage)
+		// })
+
+		/* ---------------------------------------------------------------- */
+		/*
+			Problem Statement - Fetch data from the server (6a) and then process it (4s) (Both are asynchronous)
+			Create 2 promises - 1. fetchDataFromServer 2. processData
+		*/
+
+		// const fetchDataFromServer = () => {
+		// 	console.log('Fetching data from server ...')
+		// 	return new Promise((resolve, reject) => {
+		// 		setTimeout(() => {
+		// 			resolve('Data Fetched successfully after 6s')
+		// 		}, 6000)
+		// 	})
+		// }
+
+		// const processData = () => {
+		// 	console.log('Processing data now ...')
+		// 	return new Promise((resolve, reject) => {
+		// 		setTimeout(() => {
+		// 			resolve('Data Processed successfully after 4s')
+		// 		}, 4000)
+		// 	})
+		// }
+
+		// Handling separately - [Incorrect]
+		// fetchDataFromServer().then((resolvedMessage) => {
+		// 	console.log(resolvedMessage)
+		// }).catch((rejectedMessage) => {
+		// 	console.log(rejectedMessage)
+		// })
+		// processData().then((resolvedMessage) => {
+		// 	console.log(resolvedMessage)
+		// }).catch((rejectedMessage) => {
+		// 	console.log(rejectedMessage)
+		// })
+
+		// fetchDataFromServer().then((resolvedMessage1) => {
+		// 	console.log(resolvedMessage1)
+		// 	return processData()
+		// }).then((resolvedMessage2) => {
+		// 	console.log(resolvedMessage2)
+		// }).catch((rejectedMessage) => {
+		// 	console.log(rejectedMessage)
+		// })
+
+		/* ---------------------------------------------------------------- */
+
+		// const fetchDataFromServer = () => {
+		// 	console.log('Fetching data from server ...')
+		// 	return new Promise((resolve, reject) => {
+		// 		setTimeout(() => {
+		// 			console.log('Data Fetched successfully after 6s')
+		// 			resolve(studentDataReceivedFromAPI)
+		// 		}, 6000)
+		// 	})
+		// }
+
+		// const processData = (resultFromAPI) => {
+		// 	console.log('Processing data now ...')
+		// 	return new Promise((resolve, reject) => {
+		// 		setTimeout(() => {
+		// 			let studentsOfBatch10 = resultFromAPI.filter(student => student.batch === 10).map(student => student.name)
+		// 			console.log('Data Processed successfully after 4s')
+		// 			resolve(studentsOfBatch10)
+		// 		}, 4000)
+		// 	})
+		// }
+
+		// fetchDataFromServer().then((res) => {
+		// 	return processData(res)
+		// }).then((processedData) => {
+		// 	console.log('Students of Batch 10 are ', processedData.join(','))
+		// }).catch((rejectedMessage) => {
+		// 	console.log(rejectedMessage)
+		// })
+
+		/* ---------------------------------------------------------------- */
+	</script>
+</head>
+<body>
+	<button onclick="fetchStudentData()">Fetch Students Data</button>
+</body>
+</html>

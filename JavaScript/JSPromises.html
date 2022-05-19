@@ -124,6 +124,45 @@
 		// 	})
 		// }
 
+		/* ---------------------------------------------------------------- */
+		// .finally -
+		// let promise = new Promise((resolve, reject) => {
+		// 	// setTimeout(() => {
+		// 	// 	resolve('API Status: 200 Successful')
+		// 	// }, 8000)
+
+		// 	setTimeout(() => {
+		// 		reject('API Failed: 404 Not Found')
+		// 	}, 8000)
+		// })
+
+		// promise.then((resolvedMessage) => {
+		// 	console.log('[RESOLVED] '+ resolvedMessage)
+		// }).catch((rejectedMessage) => {
+		// 	console.log('[REJECTED] '+ rejectedMessage)
+		// }).finally(() => {
+		// 	console.log("I'll get executed either ways")
+		// })
+
+		/* ---------------------------------------------------------------- */
+		// .then - 2 callbacks
+		// let promise = new Promise((resolve, reject) => {
+		// 	// setTimeout(() => {
+		// 	// 	resolve('API Status: 200 Successful')
+		// 	// }, 8000)
+		// 	setTimeout(() => {
+		// 		reject('API Failed: 404 Not Found')
+		// 	}, 2000)
+		// })
+
+		// // if .then has 2 callbacks - first callback is for resolve scenario and second callback is for reject scenario
+		// promise.then((resolvedMessage) => {
+		// 	console.log('[RESOLVED] '+ resolvedMessage)
+		// }, (rejectedMessage) => {
+		// 	console.log('[REJECTED] '+ rejectedMessage)
+		// })
+		/* ---------------------------------------------------------------- */
+
 	</script>
 	<button onclick="fetchProfileInformation()">Fetch Profile Information</button>
 </body>
