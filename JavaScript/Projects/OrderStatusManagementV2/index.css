@@ -1,0 +1,21 @@
+.main-heading{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.order-id-input{
+	margin: 20px auto;
+	width: 500px;
+	text-align: center;
+}
+
+.btn-outer{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.order-block {
+	display: none;
+}
