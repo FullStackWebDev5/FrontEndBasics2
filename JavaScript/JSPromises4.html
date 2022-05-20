@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS Promises</title>
+	<script>
+		let promise1 = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('[PROMISE 1] I got resolved after 5s')
+			}, 5000)
+		})
+
+		let promise2 = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('[PROMISE 2] I got resolved after 3s')
+			}, 3000)
+		})
+
+		let promise3 = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('[PROMISE 3] I got resolved after 8s')
+			}, 8000)
+		})
+
+		// promise1
+		// 	.then((resolvedMessage) => console.log(resolvedMessage))
+		// 	.catch((rejectedMessage) => console.log(rejectedMessage))
+		// promise2
+		// 	.then((resolvedMessage) => console.log(resolvedMessage))
+		// 	.catch((rejectedMessage) => console.log(rejectedMessage))
+		// promise3
+		// 	.then((resolvedMessage) => console.log(resolvedMessage))
+		// 	.catch((rejectedMessage) => console.log(rejectedMessage))
+
+		// Promise.all()
+		// Promise.all([promise1, promise2, promise3])
+		// 	.then((resolvedMessage) => console.log(resolvedMessage))
+		// 	.catch(err => console.log(err))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
