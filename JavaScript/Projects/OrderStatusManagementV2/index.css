@@ -1,3 +1,4 @@
+/* MAIN HEADER */
 .main-heading{
 	margin-top: 10px;
 	text-align: center;
@@ -16,6 +17,7 @@
 	margin-bottom: 20px;
 }
 
+/* ORDER CARDS */
 .order-block {
 	margin: 20px 0;
 }
@@ -46,6 +48,7 @@
 	font-size: 1.2em;
 }
 
+/* EMPTY ORDER IMAGE */
 #empty-order-gif {
 	height: 400px;
 	max-width: 400px;
