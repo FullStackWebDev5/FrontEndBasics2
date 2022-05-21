@@ -19,3 +19,35 @@
 .order-block {
 	margin: 20px 0;
 }
+
+.card {
+	border-radius: 20px
+}
+
+.card-header {
+	color: #fff;
+	background-color: #212529;
+	border-color: #212529;
+	border-radius: 20px 20px 0 0 !important;
+}
+
+.card-footer{
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.cancel-button {
+	width: 100%;
+  border-radius: 0 0 20px 20px;
+}
+
+.order-status{
+	font-size: 1.2em;
+}
+
+#empty-order-gif {
+	height: 400px;
+	max-width: 400px;
+  margin: auto;
+}

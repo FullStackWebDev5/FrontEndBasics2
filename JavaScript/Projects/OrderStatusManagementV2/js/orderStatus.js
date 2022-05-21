@@ -1,7 +1,7 @@
 const chefReceived = () => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			console.log('Chef received the order and started preparing')
+			console.log('Chef received')
 			resolve()
 		}, 2000)
 	})
