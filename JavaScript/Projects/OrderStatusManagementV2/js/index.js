@@ -1,4 +1,3 @@
-let orderNumber = 0
 let orderBlocks = document.getElementsByClassName('order-block')
 let cardheaders = document.getElementsByClassName('card-header')
 let parentDiv = document.getElementById('parent-div')
@@ -47,15 +46,25 @@ const createNewOrderColumn = (orderIdInput) => {
 	cardTextP.classList = 'card-text'
 	cardButtonA.classList = 'btn btn-danger cancel-button'
 	cardOrderStatusSpan.classList = 'badge rounded-pill bg-success order-status'
+
+	cardOrderStatusSpan.id = orderIdInput
 }
 
 const executeOrder = () => {
 	emptyOrderGif.style.display = 'none'
+
 	let orderIdInput = document.getElementById('order-id-input').value
+
+	if(!orderIdInput.length){
+		alert('Please enter a valid order ID')
+		return
+	}
+
 	createNewOrderColumn(orderIdInput)
 
-	console.log('Order Placed')
-	chefReceived()
+	document.getElementById(orderIdInput).innerText = 'Order Placed!'
+
+	chefReceived(orderIdInput)
 		.then(pizzaSauceAdded)
 		.then(firstLayerOfCheezeAdded)
 		.then(toppingsAdded)
@@ -63,7 +72,7 @@ const executeOrder = () => {
 		.then(pizzaBaked)
 		.then(oreganoAdded)
 		.then(packageReceivedAtCounter)
-		.then(() => console.log('Order Ready!'))
+		.then(() => document.getElementById(orderIdInput).innerText = 'Order Ready!')
 		.catch((err) => console.log(err))
 }
 
