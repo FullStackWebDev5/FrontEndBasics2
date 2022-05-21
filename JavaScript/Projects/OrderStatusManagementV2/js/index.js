@@ -47,6 +47,18 @@ const createNewOrderColumn = (orderIdInput) => {
 const executeOrder = () => {
 	let orderIdInput = document.getElementById('order-id-input').value
 	createNewOrderColumn(orderIdInput)
+
+	console.log('Order Placed')
+	chefReceived()
+		.then(pizzaSauceAdded)
+		.then(firstLayerOfCheezeAdded)
+		.then(toppingsAdded)
+		.then(secondLayerOfCheezeAdded)
+		.then(pizzaBaked)
+		.then(oreganoAdded)
+		.then(packageReceivedAtCounter)
+		.then(() => console.log('The order is ready and handed over to the Zomato guy!'))
+		.catch((err) => console.log(err))
 }
 
 
