@@ -48,6 +48,11 @@ const createNewOrderColumn = (orderIdInput) => {
 	cardOrderStatusSpan.classList = 'badge rounded-pill bg-success order-status'
 
 	cardOrderStatusSpan.id = orderIdInput
+
+	cardButtonA.addEventListener('click', () => {
+		// parentDiv.removeChild(colDiv)
+		colDiv.style.display = 'none'
+	})
 }
 
 const executeOrder = () => {
