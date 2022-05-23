@@ -8,20 +8,20 @@
 	<script>
 		let promise1 = new Promise((resolve, reject) => {
 			setTimeout(() => {
-				resolve('[PROMISE 1] I got resolved after 5s')
-			}, 5000)
+				resolve('[PROMISE 1] I got resolved')
+			}, 1000)
 		})
 
 		let promise2 = new Promise((resolve, reject) => {
 			setTimeout(() => {
-				resolve('[PROMISE 2] I got resolved after 3s')
+				resolve('[PROMISE 2] I got resolved!')
 			}, 3000)
 		})
 
 		let promise3 = new Promise((resolve, reject) => {
 			setTimeout(() => {
-				resolve('[PROMISE 3] I got resolved after 8s')
-			}, 8000)
+				resolve('[PROMISE 3] I got resolved!')
+			}, 5000)
 		})
 
 		// promise1
@@ -38,6 +38,25 @@
 		// Promise.all([promise1, promise2, promise3])
 		// 	.then((resolvedMessage) => console.log(resolvedMessage))
 		// 	.catch(err => console.log(err))
+		
+		/*
+			- Will only resolve if 'ALL' promises gets resolved (can be related to && opeartor)
+			- Overall resolved value will be an array of resolved values from all promises
+			- rejected value will be the first rejected promise value
+			- Overall promise resolve time = resolve time of promise which takes the largest time
+		*/
+
+		// Promise.any()
+		Promise.any([promise1, promise2, promise3])
+			.then((resolvedMessage) => console.log(resolvedMessage))
+			.catch(err => console.log(err))
+
+		/*
+			- Will resolve even if a 'SINGLE' promise gets resolved (can be related to || opeartor)
+			- Overall resolved value = Resolved value of first resolved promise
+			- Rejected promises will be skipped, If all promises are rejected - Promise.any will be rejected (catch handler will work)
+			- Overall promise resolve time = resolve time of promise which takes the shortest time
+		*/
 	</script>
 </head>
 <body>

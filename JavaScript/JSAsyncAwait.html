@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Async Await</title>
+	<script>
+		// let promise = new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve('API Status: 200 Successful')
+		// 		// reject('API Status: 404 Not Found')
+		// 	}, 8000)
+		// })
+
+		// promise.then((resolvedMessage) => {
+		// 	console.log('[RESOLVED] '+ resolvedMessage)
+		// }).catch((rejectedMessage) => {
+		// 	console.log('[REJECTED] '+ rejectedMessage)
+		// })
+
+		/* ---------------------------------------------------------------- */
+		// async function handleAsyncCode () {}
+		// const handleAsyncCode = async function (){}
+		// const handleAsyncCode = async () => {}
+
+		/* ---------------------------------------------------------------- */
+		// EQUIVALENT REPRESENTATION HANDLING PROMISES
+		// async function handleAsync () {
+		// 	try {
+		// 		const resolvedMessage = await promise
+		// 		console.log('[RESOLVED] '+ resolvedMessage)
+		// 	} catch (rejectedMessage) {
+		// 		console.log('[REJECTED] '+ rejectedMessage)
+		// 	}
+		// }
+		// handleAsync()
+
+		/* ---------------------------------------------------------------- */
+
+		// ASYNC - Attach this keyword to any function - To make it asynchronous/ Handle asynchronous code
+		// AWAIT - Waits for resolved state of promise (Returns resolved value of promise)
+
+		// await should always be used inside async function
+
+		/* ---------------------------------------------------------------- */
+		// async function handleAsync () {
+		// 	try {
+		// 		console.log('Hanlding Async Code Started ...')
+		// 		const resolvedMessage = await promise
+		// 		console.log('[RESOLVED] '+ resolvedMessage)
+		// 	} catch (rejectedMessage) {
+		// 		console.log('[REJECTED] '+ rejectedMessage)
+		// 	}
+		// }
+		// handleAsync()
+
+		/* ---------------------------------------------------------------- */
+		let fetchDataFromServer = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('[200] Data Fetched Successfully!')
+			}, 8000)
+		})
+
+		let processData = () => new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Data Processed Successfully!')
+			}, 4000)
+		})
+
+		const fetchAndProcessData = async () => {
+			try {
+				console.log('Fetching data from server ...')
+				const res = await fetchDataFromServer()
+				console.log(res)
+				console.log('Processing data now ...')
+				const res2 = await processData()
+				console.log(res2)
+			} catch (err) {
+				console.log(err)
+			}
+		}
+		fetchAndProcessData()
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
