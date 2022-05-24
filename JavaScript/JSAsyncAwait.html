@@ -56,31 +56,31 @@
 		// handleAsync()
 
 		/* ---------------------------------------------------------------- */
-		let fetchDataFromServer = () => new Promise((resolve, reject) => {
-			setTimeout(() => {
-				resolve('[200] Data Fetched Successfully!')
-			}, 8000)
-		})
+		// let fetchDataFromServer = () => new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve('[200] Data Fetched Successfully!')
+		// 	}, 8000)
+		// })
 
-		let processData = () => new Promise((resolve, reject) => {
-			setTimeout(() => {
-				resolve('Data Processed Successfully!')
-			}, 4000)
-		})
+		// let processData = () => new Promise((resolve, reject) => {
+		// 	setTimeout(() => {
+		// 		resolve('Data Processed Successfully!')
+		// 	}, 4000)
+		// })
 
-		const fetchAndProcessData = async () => {
-			try {
-				console.log('Fetching data from server ...')
-				const res = await fetchDataFromServer()
-				console.log(res)
-				console.log('Processing data now ...')
-				const res2 = await processData()
-				console.log(res2)
-			} catch (err) {
-				console.log(err)
-			}
-		}
-		fetchAndProcessData()
+		// const fetchAndProcessData = async () => {
+		// 	try {
+		// 		console.log('Fetching data from server ...')
+		// 		const res = await fetchDataFromServer()
+		// 		console.log(res)
+		// 		console.log('Processing data now ...')
+		// 		const res2 = await processData()
+		// 		console.log(res2)
+		// 	} catch (err) {
+		// 		console.log(err)
+		// 	}
+		// }
+		// fetchAndProcessData()
 
 	</script>
 </head>
