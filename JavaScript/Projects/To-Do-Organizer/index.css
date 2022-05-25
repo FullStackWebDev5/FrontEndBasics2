@@ -39,3 +39,19 @@
 	color: black;
 	border-color: black;
 } */
+
+.to-do-card {
+	margin: 20px;
+}
+
+.to-do-card .card-header {
+	background-color: white;
+}
+
+.to-do-card .card-title {
+	margin-bottom: 20px;
+}
+
+.to-do-card .btn-danger {
+	width:100%;
+}

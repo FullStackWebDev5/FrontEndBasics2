@@ -16,17 +16,26 @@
 		</div>
 		<div class="row outer">
 			<div class="col-md-4 col-xs-12">
-				<div class="todo-section">
+				<div class="todo-section" id="to-do-block">
 					<h1 class="display-4">To-Do</h1>
+					<div class="card to-do-card">
+						<div class="card-header">
+							<span class="badge rounded-pill bg-warning text-dark">Medium Priority</span>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Complete revision of Async Await</h5>
+							<a class="btn btn-sm btn-danger">Delete</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-12">
-				<div class="todo-section">
+				<div class="todo-section" id="in-progress-block">
 					<h1 class="display-4">In-Progress</h1>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-12">
-				<div class="todo-section">
+				<div class="todo-section" id="completed-block">
 					<h1 class="display-4">Completed</h1>
 				</div>
 			</div>
@@ -41,13 +50,20 @@
 				</div>
 				<div class="modal-body">
 					<input class="form-control form-control-lg" type="text" placeholder="Enter the task" aria-label=".form-control-lg example">
+					<select class="form-select form-select-lg mt-3" aria-label=".form-select-lg example">
+						<option selected>Select the priority</option>
+						<option value="high">High</option>
+						<option value="medium">Medium</option>
+						<option value="low">Low</option>
+					</select>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-					<button type="button" class="btn btn-dark">Create To-Do</button>
+					<button type="button" class="btn btn-dark" onclick="createToDoDiv()" data-bs-dismiss="modal">Create To-Do</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script src="index.js"></script>
 </body>
 </html>
