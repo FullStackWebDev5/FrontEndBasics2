@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Classes</title>
+	<script>
+		// JavaScript Classes are templates for JavaScript Objects.
+
+		/*
+			SYNTAX - 
+			class ClassName {
+				constructor () {
+
+				}
+			}
+			constructor - Only method in the class which gets invoked directly at the time of object creation
+		*/
+
+		/* ------------------------------------------------------ */
+
+		// class Student {
+		// 	constructor(name, batch, techStack){
+		// 		this.name = name
+		// 		this.batch = batch
+		// 		this.techStack = techStack
+		// 	}
+		// }
+
+		// const abhishek = new Student('Abhishek', 'Batch 10', 'MERN')
+
+		/* ------------------------------------------------------ */
+
+		// class Student {
+		// 	constructor(name, batch, techStack){
+		// 		this.name = name
+		// 		this.batch = batch
+		// 		this.techStack = techStack
+		// 	}
+
+		// 	// Methods
+		// 	// Getter Method
+		// 	displayInfo(){
+		// 		console.log(`${this.name} from ${this.batch} is currently learning ${this.techStack} stack technology.`)
+		// 	}
+		// }
+
+		// const abhishek = new Student('Abhishek', 'Batch 10', 'MERN')
+
+		// const santhana = new Student('Santhana', 'Batch 12', 'MEAN')
+
+		// abhishek.displayInfo()
+		// santhana.displayInfo()
+
+		/* ------------------------------------------------------ */
+
+		// class Student {
+		// 	constructor(name, batch, techStack, subjectMarks){
+		// 		this.name = name
+		// 		this.batch = batch
+		// 		this.techStack = techStack
+		// 		this.subjectMarks = subjectMarks
+		// 	}
+
+		// 	displayInfo(){
+		// 		console.log(`${this.name} from ${this.batch} is currently learning ${this.techStack} stack technology.`)
+		// 	}
+
+		// 	isPass () {
+		// 		return this.subjectMarks.every(singleMarks => singleMarks >= 35)
+		// 	}
+		// }
+
+		// const pankaj = new Student('Pankaj', 'Batch 9', 'MEVN', [86, 35, 65, 98, 87])
+		// const pranati = new Student('Pranati', 'Batch 10', 'MERN', [36, 55, 45, 88, 76])
+
+		// pankaj.displayInfo()
+		// console.log(pankaj.isPass() ? 'Result: PASS' : 'Result: NOT PASS')
+
+		// pranati.displayInfo()
+		// console.log(pranati.isPass() ? 'Result: PASS' : 'Result: NOT PASS')
+
+		/* 
+			Q - Create isPass getter method, which will check whether the student has score >= 35 marks in every subject.
+			If yes, return true, else false.
+			Log result based on value returned
+		*/
+
+		/* ------------------------------------------------------ */
+
+		class Student {
+			constructor(name, batch, techStack, subjectMarks){
+				this.name = name
+				this.batch = batch
+				this.techStack = techStack
+				this.subjectMarks = subjectMarks
+			}
+
+			displayInfo(){
+				console.log(`${this.name} from ${this.batch} is currently learning ${this.techStack} stack technology.`)
+			}
+
+			displayMarks(){
+				this.subjectMarks.forEach((singleSubject, index) => {
+					console.log(`[SUBJECT ${index + 1}] ${singleSubject.subject}: ${singleSubject.marks}`)
+				})
+			}
+
+			isPass () {
+				// return PASS/ NOT PASS
+			}
+
+			calculateAverage() {
+				// return average of all marks
+			}
+		}
+
+		const pankaj = new Student('Pankaj', 'Batch 9', 'MEVN',
+			[
+				{
+					subject: 'Mathematics',
+					marks: 86
+				},
+				{
+					subject: 'Science',
+					marks: 35
+				},
+				{
+					subject: 'Social Science',
+					marks: 65
+				},
+				{
+					subject: 'English',
+					marks: 98
+				},
+				{
+					subject: 'Hindi',
+					marks: 87
+				}
+			])
+
+		pankaj.displayInfo()
+		pankaj.displayMarks()
+		// console.log(pankaj.isPass() ? 'Result: PASS' : 'Result: NOT PASS')
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
