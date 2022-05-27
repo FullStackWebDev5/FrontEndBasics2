@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		/* Class Inheritance
+			 - Child class can inherit all the properties and methods of parent class and have some unique properties and methods of it's own
+			 - using keyword 'extends'
+			 - super method - invokes the constructor of parent class
+
+			Example in Human Hierarchy:
+			Parent:
+				1. First Name
+				2. Last Name
+				3. DNA
+				4. Age
+			
+			Child:
+				1. First Name
+				2. Age
+				[Last Name and DNA is inherited from the parent]
+		*/
+
+		class Person {
+			constructor(firstName, lastName, age) {
+				this.firstName = firstName
+				this.lastName = lastName
+				this.age = age
+			}
+
+			displayInfo(){
+				return `${this.firstName} ${this.lastName} is ${this.age} years old.`
+			}
+		}
+
+		// const vaishnavi = new Person('Vaishnavi', 'Gupta', 21)
+		// console.log(vaishnavi.displayInfo())
+
+		class Student extends Person {
+			constructor(firstName, lastName, age, stream, course, batch) {
+				super(firstName, lastName, age)
+				this.stream = stream
+				this.course = course
+				this.batch = batch
+			}
+
+			displayCompleteInfo(){
+				return `${this.displayInfo()} He/She is currently pursuing ${this.stream} stream, ${this.course} course and is from ${this.batch}`
+			}
+		}
+
+		const vaishnavi =  new Student('Vaishnavi', 'Gupta', 21, 'Computer Science', 'Front End Web Development', 'Batch 10')
+
+		console.log(vaishnavi.displayCompleteInfo())
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
