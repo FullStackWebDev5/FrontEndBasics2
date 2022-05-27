@@ -13,3 +13,30 @@ const createToDo = () => {
   });
 	createToDoDiv(toDoInput, toDoPriorityInput, toDoDeadline)
 }
+
+/* 
+	Draggable Elements -
+	[draggable = "true"]
+	1. ondragStart
+	2. ondrag
+
+	Parent Elements (Where you have to drop the draggable element)
+	1. ondragover
+	2. ondrop
+*/
+
+const toDoDragStart = (event) => {
+
+}
+
+const toDoDrag = (event) => {
+
+}
+
+const allowDrop = (event) => {
+	event.preventDefault()
+}
+
+const toDoDrop = (event) => {
+
+}

@@ -1,5 +1,7 @@
 const toDoBlock = document.getElementById('to-do-block')
 
+let idCount = 1
+
 const createToDoDiv = (toDoInput, toDoPriorityInput, toDoDeadline) => {
 	const toDoCardDiv = document.createElement('div')
 	const cardHeaderDiv = document.createElement('div')
@@ -14,6 +16,8 @@ const createToDoDiv = (toDoInput, toDoPriorityInput, toDoDeadline) => {
 	cardBodyDiv.classList = 'card-body'
 	cardTitleH5.classList = 'card-title'
 	deleteButton.classList = 'btn btn-sm btn-danger'
+
+	toDoCardDiv.id = `to-do-card-${idCount}`
 
 	priorityDisplaySpan.innerText = `${toDoPriorityInput} Priority`
 	cardTitleH5.innerText = toDoInput
@@ -41,6 +45,9 @@ const createToDoDiv = (toDoInput, toDoPriorityInput, toDoDeadline) => {
 
 	toDoBlock.appendChild(toDoCardDiv)
 
+	idCount++
+}
+
 	// 	<div class="card to-do-card">
 	// 		<div class="card-header">
 	// 			<span class="badge rounded-pill bg-warning text-dark">Medium Priority</span>
@@ -51,4 +58,3 @@ const createToDoDiv = (toDoInput, toDoPriorityInput, toDoDeadline) => {
 	// 			<a class="btn btn-sm btn-danger">Delete</a>
 	// 		</div>
 	// 	</div>
-}
