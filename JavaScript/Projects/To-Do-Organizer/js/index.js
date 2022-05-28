@@ -26,11 +26,8 @@ const createToDo = () => {
 */
 
 const toDoDragStart = (event) => {
-
-}
-
-const toDoDrag = (event) => {
-
+	let toDoCardIDBeingDragged = event.target.id
+	event.dataTransfer.setData('ToDoCard', toDoCardIDBeingDragged)
 }
 
 const allowDrop = (event) => {
@@ -38,5 +35,8 @@ const allowDrop = (event) => {
 }
 
 const toDoDrop = (event) => {
-
+	let toDoCardIDBeingDragged = 	event.dataTransfer.getData('ToDoCard')
+	let toDoCardBeingDropped = document.getElementById(toDoCardIDBeingDragged)
+	let parentElement = event.target
+	parentElement.appendChild(toDoCardBeingDropped)
 }
