@@ -2,6 +2,22 @@ const toDoBlock = document.getElementById('to-do-block')
 
 let idCount = 1
 
+const toDoDragStart = (event) => {
+	let toDoCardIDBeingDragged = event.target.id
+	event.dataTransfer.setData('ToDoCard', toDoCardIDBeingDragged)
+}
+
+const allowDrop = (event) => {
+	event.preventDefault()
+}
+
+const toDoDrop = (event) => {
+	let toDoCardIDBeingDragged = 	event.dataTransfer.getData('ToDoCard')
+	let toDoCardBeingDropped = document.getElementById(toDoCardIDBeingDragged)
+	let parentElement = event.target
+	parentElement.appendChild(toDoCardBeingDropped)
+}
+
 const createToDoDiv = (toDoInput, toDoPriorityInput, toDoDeadline) => {
 	const toDoCardDiv = document.createElement('div')
 	const cardHeaderDiv = document.createElement('div')
@@ -36,6 +52,10 @@ const createToDoDiv = (toDoInput, toDoPriorityInput, toDoDeadline) => {
 			break;
 	}
 
+	toDoCardDiv.draggable = "true"
+	toDoCardDiv.addEventListener('dragstart', toDoDragStart)
+	deleteButton.addEventListener('click', () => toDoCardDiv.style.display = 'none')
+
 	toDoCardDiv.appendChild(cardHeaderDiv)
 	cardHeaderDiv.appendChild(priorityDisplaySpan)
 	cardHeaderDiv.appendChild(deadlineDisplaySpan)
@@ -48,13 +68,23 @@ const createToDoDiv = (toDoInput, toDoPriorityInput, toDoDeadline) => {
 	idCount++
 }
 
-	// 	<div class="card to-do-card">
-	// 		<div class="card-header">
-	// 			<span class="badge rounded-pill bg-warning text-dark">Medium Priority</span>
-	// 			<span>2022-05-26 3:00 PM</span>
-	// 		</div>
-	// 		<div class="card-body">
-	// 			<h5 class="card-title">Complete revision of Async Await</h5>
-	// 			<a class="btn btn-sm btn-danger">Delete</a>
-	// 		</div>
-	// 	</div>
+// <div class="card to-do-card" id="test-id" draggable="true" ondragstart="toDoDragStart(event)">
+// 	<div class="card-header">
+// 		<span class="badge rounded-pill bg-info text-dark">Low Priority</span>
+// 		<span>May 27, 2022, 4:20:00 PM</span></div>
+// 	<div class="card-body">
+// 		<h5 class="card-title">Task 111</h5>
+//		<a class="btn btn-sm btn-danger">Delete</a>
+// 	</div>
+// </div>
+
+/* 
+	Draggable Elements -
+	[draggable = "true"]
+	1. ondragStart
+	2. ondrag
+
+	Parent Elements (Where you have to drop the draggable element)
+	1. ondragover
+	2. ondrop
+*/
