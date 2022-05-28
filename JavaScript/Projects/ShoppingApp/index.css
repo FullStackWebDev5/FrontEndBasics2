@@ -1,0 +1,42 @@
+body {
+	background: linear-gradient(90deg, rgba(132,28,60,1) 0%, rgba(248,95,81,1) 100%);
+}
+
+.main-header-section.jumbotron {
+	text-align: center;
+	background-color: #fbe5d6;
+}
+
+.jumbotron-img {
+	margin: 0 0 20px;
+	height: 250px;
+	border-radius: 100%;
+	border: 1px solid #f85f51;
+}
+
+.btn-primary {
+	background: linear-gradient(90deg, rgba(132,28,60,1) 0%, rgba(248,95,81,1) 100%);
+}
+
+.navbar {
+	background-color: #fbe5d6;
+}
+
+.btn {
+	border: none
+}
+.btn:active {
+	box-shadow: none;
+}
+.btn:focus {
+	box-shadow: none;
+}
+
+.navbar-brand img {
+	border-radius: 10px;
+	margin-right: 2px;
+}
+
+.card.product .card-img-top {
+	height: 300px;
+}
