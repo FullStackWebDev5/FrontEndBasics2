@@ -8,10 +8,7 @@ body {
 }
 
 .jumbotron-img {
-	margin: 0 0 20px;
-	height: 250px;
-	border-radius: 100%;
-	border: 1px solid #f85f51;
+	height: 300px;
 }
 
 .btn-primary {
@@ -37,6 +34,33 @@ body {
 	margin-right: 2px;
 }
 
+.card.product {
+	margin: 10px 0;
+}
+
 .card.product .card-img-top {
-	height: 300px;
+	height: 200px;
+}
+
+.card.product .btn-outer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+
+.card.product .btn-outer .buy-btn {
+	width: 100px;
+}
+
+.card.product .product-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.fa-star.checked {
+  color: orange;
+}
+
+.card-title.product-price {
+	color: green;
 }
