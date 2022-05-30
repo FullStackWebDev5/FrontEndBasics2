@@ -55,6 +55,7 @@ body {
 .card.product .product-header {
 	display: flex;
 	justify-content: space-between;
+	height: 39px;
 }
 
 .fa-star.checked {
@@ -63,4 +64,8 @@ body {
 
 .card-title.product-price {
 	color: green;
+}
+
+.card-text {
+	height: 72px;
 }
