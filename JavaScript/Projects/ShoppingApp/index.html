@@ -22,7 +22,7 @@
 	<title>Max's Shopping App</title>
 </head>
 
-<body>
+<body onload="fetchProducts()">
 	<!-- ------------------------------------------ NAVBAR ------------------------------------------ -->
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<a class="navbar-brand" href="#">
@@ -58,22 +58,27 @@
 
 	<!-- ------------------------------------------ JUMBOTRON ------------------------------------------ -->
 	<div class="jumbotron main-header-section">
-		<h1 class="display-1">Welcome to Max's Shopping App</h1>
+		<h1 class="display-1">
+			Welcome to<br>
+			<span class="brand-name">Max's</span><br>
+			Shopping App
+		</h1>
 		<p class="lead">The one stop destination for all your shopping needs! Be it from fashion to electronics, you get it all here!</p>
-		<hr class="my-4">
-		<p>Explore and choose from wide-range of products excludively available on our platform</p>
-		<img src='assets/online-shop.gif' class="jumbotron-img">
+		<hr>
+		<a class="btn btn-lg btn-primary" href="#products" role="button">Explore</a>
 		<br>
-		<a class="btn btn-lg btn-primary" href="#products" role="button" onclick="fetchProducts()">Explore</a>
+		<img src='assets/online-shop.gif' class="jumbotron-img">
 	</div>
 
 	<!-- ------------------------------------------ PRODUCTS ------------------------------------------ -->
 	<div class="container">
 		<div class="row" id="products">
+			<div id="products-spinner" class="spinner-border text-light" role="status"></div>
 		</div>
 	</div>
 	<script src="js/index.js"></script>
 	<script src="js/createProduct.js"></script>
+	<script src="js/misc.js"></script>
 </body>
 
 </html>

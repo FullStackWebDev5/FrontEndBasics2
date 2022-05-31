@@ -2,6 +2,13 @@ body {
 	background: linear-gradient(90deg, rgba(132,28,60,1) 0%, rgba(248,95,81,1) 100%);
 }
 
+.navbar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
 .main-header-section.jumbotron {
 	text-align: center;
 	background-color: #fbe5d6;
@@ -9,6 +16,13 @@ body {
 
 .jumbotron-img {
 	height: 300px;
+}
+
+.brand-name {
+	background: linear-gradient(90deg, rgba(132,28,60,1) 0%, rgba(248,95,81,1) 100%);
+	padding: 5px 30px;
+	border-radius: 60px;
+	color: #fbe5d6;
 }
 
 .btn-primary {
@@ -32,6 +46,14 @@ body {
 .navbar-brand img {
 	border-radius: 10px;
 	margin-right: 2px;
+}
+
+#products {
+	padding-top: 60px;
+}
+
+#products-spinner {
+	margin: 50px auto;
 }
 
 .card.product {
@@ -64,6 +86,7 @@ body {
 
 .card-title.product-price {
 	color: green;
+	margin-left: 4px;
 }
 
 .card-text {
