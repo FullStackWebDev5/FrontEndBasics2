@@ -44,7 +44,7 @@ const createProductDiv = (product) => {
 	ratingStar5.classList = 'fa fa-star checked'
 	ratingCount.classList = 'rating-count'
 	cardButtonOuter.classList = 'btn-outer'
-	addToCartButton.classList = 'btn btn-primary'
+	addToCartButton.classList = 'btn btn-primary add-to-cart-btn'
 	buyButton.classList = 'btn btn-primary buy-btn'
 
 	colDiv.id = `product-${product.id}`
@@ -53,8 +53,8 @@ const createProductDiv = (product) => {
 	productPrice.innerText = `$${product.price}`
 	productDescription.innerText = `${product.description.slice(0, 50)}...`
 	ratingCount.innerText = `(${product.rating.count})`
-	addToCartButton.innerText = 'Add to cart'
-	buyButton.innerText = 'But now'
+	addToCartButton.innerHTML = '<i class="fa fa-cart-plus" aria-hidden="true"></i>'
+	buyButton.innerText = 'Buy now'
 
 	productImg.src = product.image
 	productImg.alt = 'product-img'
@@ -66,17 +66,24 @@ const createProductDiv = (product) => {
 	productHeader.appendChild(productTitle)
 	productHeader.appendChild(productPrice)
 	productBody.appendChild(productDescription)
-	productBody.appendChild(ratingStar1)
-	productBody.appendChild(ratingStar2)
-	productBody.appendChild(ratingStar3)
-	productBody.appendChild(ratingStar4)
-	productBody.appendChild(ratingStar5)
-	productBody.appendChild(ratingCount)
 	productBody.appendChild(cardButtonOuter)
 	cardButtonOuter.appendChild(addToCartButton)
 	cardButtonOuter.appendChild(buyButton)
 
+	const ratingStars = Math.ceil(product.rating.rate)
+	ratingStars >= 1 && productBody.appendChild(ratingStar1)
+	ratingStars >= 2 && productBody.appendChild(ratingStar2)
+	ratingStars >= 3 && productBody.appendChild(ratingStar3)
+	ratingStars >= 4 && productBody.appendChild(ratingStar4)
+	ratingStars >= 5 && productBody.appendChild(ratingStar5)
+	productBody.appendChild(ratingCount)
+
 	productsParentDiv.appendChild(colDiv)
+
+	addToCartButton.addEventListener('click', function () {
+		addToCart(product.id);
+		this.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
+	})
 }
 
 {/* <div class="col-md-3">

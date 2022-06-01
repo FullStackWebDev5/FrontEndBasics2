@@ -71,7 +71,12 @@ body {
 }
 
 .card.product .btn-outer .buy-btn {
-	width: 100px;
+	flex: 1;
+	margin: 0 0 0 5px;
+}
+
+.card.product .btn-outer .add-to-cart-btn{
+	flex: 1;
 }
 
 .card.product .product-header {
@@ -91,4 +96,8 @@ body {
 
 .card-text {
 	height: 72px;
+}
+
+.rating-count {
+	margin-left: 5px;
 }
