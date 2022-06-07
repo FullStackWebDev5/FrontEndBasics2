@@ -101,3 +101,11 @@ body {
 .rating-count {
 	margin-left: 5px;
 }
+
+#about-us, #contact-us {
+	background-color: #fbe5d6;
+	text-align: center;
+	padding: 50px 20px;
+	border-radius: 10px;
+	margin: 60px 0;
+}
