@@ -1,11 +1,13 @@
 import "./App.css";
+import ChildComponent1 from './components/ChildComponent1'
+import ChildComponent2 from './components/ChildComponent2'
 
 const App = () => {
   return (
-    <>
-      <div className="App">We are learning React</div>
-      <div>React is awesome!</div>
-    </>
+    <div className="App">
+			<ChildComponent1 />
+			<ChildComponent2 />
+		</div>
   );
 };
 
@@ -17,7 +19,7 @@ export default App;
 	1. Class Based Components
 	2. Function Based Components
 
-	- Components can be considered as sub-sections inside the entire application
+	- Components can be considered as sub-sections (Small UI Pieces) inside the entire application
 	- Returns JSX (JavaScript + XML)
 	- Can be Nested
 	- Can be Re-Used
