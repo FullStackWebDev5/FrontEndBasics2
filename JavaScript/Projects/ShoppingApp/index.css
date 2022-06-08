@@ -32,6 +32,9 @@ body {
 .navbar {
 	background-color: #fbe5d6;
 }
+.cart-nav-link:hover {
+	cursor: pointer;
+}
 
 .btn {
 	border: none
