@@ -7,12 +7,13 @@ const ChildComponent1 = () => {
   return (
     <div className="ChildComponent1">
       <h2>Child Component 1</h2>
-      <GrandChildComponent1 />
-      <GrandChildComponent1 />
-      <GrandChildComponent1 />
-      <GrandChildComponent1 />
-      <GrandChildComponent1 />
-      <GrandChildComponent1 />
+      <GrandChildComponent1 
+				title='Heading 1' 
+				description='Lorem ipsum dolor sit amet consectetur adipisicing elit.' 
+			/>
+      <GrandChildComponent1 
+				title='Heading 2' 
+			/>
     </div>
   );
 };

@@ -27,6 +27,13 @@ export default App;
 
 	Fragments - Empty JSX tags (Used for nesting multiple elements inside a single parent to be returned by the component)
 
+	React follow 'One-way binding'
+
+	A component re-renders whenever there is a change in
+	1. props
+	- Data which is passed from the parent component down to the child component
+	- Relate this with parameters in function based components
+
 
 
 
