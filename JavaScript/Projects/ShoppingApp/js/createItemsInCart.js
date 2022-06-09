@@ -1,6 +1,8 @@
 let cartItemsBody = document.getElementById('cart-items-body')
+let cartEmptyImg = document.getElementById('cart-empty-img')
 
 const createItemsInCart = (cartItem) => {
+	cartItemsBody.removeChild(cartEmptyImg)
 	const productDiv = document.createElement('div')
 	const cartItemRow = document.createElement('div')
 	const cartItemCol1 = document.createElement('div')
