@@ -88,6 +88,10 @@ body {
 	height: 39px;
 }
 
+.cart-item-img{
+	padding: 25px;
+}
+
 .fa-star.checked {
   color: orange;
 }

@@ -1,7 +1,9 @@
 const cartItemsLength = document.getElementById('cart-items-length')
-const cartItems = []
+const cartItemIds = []
 
 const addToCart = (id) => {
-	cartItems.push(id)
-	cartItemsLength.innerText = cartItems.length
+	cartItemIds.push(id)
+	cartItemsLength.innerText = cartItemIds.length
+	let cartItem = globalProducts.find(product => product.id == id)
+	createItemsInCart(cartItem)
 }
