@@ -1,5 +1,5 @@
 const cartItemsLength = document.getElementById('cart-items-length')
-const cartItemIds = []
+let cartItemIds = []
 
 const addToCart = (id) => {
 	cartItemIds.push(id)

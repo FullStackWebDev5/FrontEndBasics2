@@ -2,7 +2,7 @@ let cartItemsBody = document.getElementById('cart-items-body')
 let cartEmptyImg = document.getElementById('cart-empty-img')
 
 const createItemsInCart = (cartItem) => {
-	cartItemsBody.removeChild(cartEmptyImg)
+	cartEmptyImg.style.display = 'none'
 	const productDiv = document.createElement('div')
 	const cartItemRow = document.createElement('div')
 	const cartItemCol1 = document.createElement('div')
@@ -50,7 +50,11 @@ const createItemsInCart = (cartItem) => {
 	cartItemsBody.appendChild(productDiv)
 
 	removeFromCart.addEventListener('click', function () {
-		console.log('Removing from cart ', cartItem.id)
+		cartItemsBody.removeChild(productDiv)
+		cartItemIds = cartItemIds.filter(cartItemId => cartItemId != cartItem.id)
+		cartItemsLength.innerText = cartItemIds.length
+		if(cartItemIds.length === 0)
+			cartEmptyImg.style.display = 'inline-block'
 	})
 }
 
