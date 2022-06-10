@@ -1,8 +1,12 @@
-import React from 'react';
+import React from 'react'
+import './GrandChildComponent1.css'
 
-const GrandChildComponent1 = ({ title, description }) => {
+const GrandChildComponent1 = ({ title, description, backgroundColor }) => {
 	return (
-    <div className="GrandChildComponent1">
+    <div 
+			className="GrandChildComponent1" 
+			style={{ backgroundColor: backgroundColor }}
+		>
       <h3>{title}</h3>
       {description && <p>Description goes here - {description}</p>}
     </div>

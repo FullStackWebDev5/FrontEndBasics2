@@ -1,13 +1,15 @@
-import "./App.css";
-import ChildComponent1 from './components/ChildComponent1/ChildComponent1'
-import ChildComponent2 from './components/ChildComponent2'
+import "./App.css"
+// import ChildComponent1 from './components/ChildComponent1/ChildComponent1'
+// import ChildComponent2 from './components/ChildComponent2'
+import Counter from './components/Counter'
 
 const App = () => {
   return (
     <div className="App">
 			<h1>App</h1>
-			<ChildComponent1 />
-			<ChildComponent2 />
+			{/* <ChildComponent1 />
+			<ChildComponent2 /> */}
+			<Counter />
 		</div>
   );
 };
