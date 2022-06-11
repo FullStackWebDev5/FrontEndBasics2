@@ -164,11 +164,61 @@
 					</button>
 				</div>
 				<div class="modal-body" id="cart-items-body">
-
+					<form novalidate id="signUpForm">
+						<div class="form-row">
+							<div class="col-md-6 mb-3 form-fields">
+								<label for="validationCustom01">First name</label>
+								<input type="text" class="form-control" id="validationCustom01" placeholder="First name" required onkeyup="validate()">
+								<div class="valid-feedback">
+									Looks good!
+								</div>
+								<div class="invalid-feedback">
+									Please enter a valid first name.
+								</div>
+							</div>
+							<div class="col-md-6 mb-3 form-fields">
+								<label for="validationCustom02">Last name</label>
+								<input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required onkeyup="validate()">
+								<div class="valid-feedback">
+									Looks good!
+								</div>
+								<div class="invalid-feedback">
+									Please enter a valid last name.
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-12 mb-3 form-fields">
+								<label for="validationCustomUsername">Email</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="inputGroupPrepend">@</span>
+									</div>
+									<input type="text" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend" required onkeyup="validate()">
+									<div class="valid-feedback">
+										Looks good!
+									</div>
+									<div class="invalid-feedback">
+										Please enter a valid email address.
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 mb-3 form-fields">
+								<label for="validationCustom03">Password</label>
+								<input type="password" class="form-control" id="validationCustom03" placeholder="Password" required onkeyup="validate()">
+								<div class="valid-feedback">
+									Looks good!
+								</div>
+								<div class="invalid-feedback">
+									Please enter a valid password.
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Sign Up</button>
+					<button type="button" class="btn btn-primary" onclick="validate(true)">Sign Up</button>
 				</div>
 			</div>
 		</div>
@@ -200,6 +250,7 @@
 	<script src="js/createItemsInCart.js"></script>
 	<script src="js/addToCart.js"></script>
 	<script src="js/misc.js"></script>
+	<script src="js/validate.js"></script>
 </body>
 
 </html>
