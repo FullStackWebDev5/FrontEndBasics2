@@ -50,11 +50,22 @@ const createItemsInCart = (cartItem) => {
 	cartItemsBody.appendChild(productDiv)
 
 	removeFromCart.addEventListener('click', function () {
+		// Remove productDiv from cart
 		cartItemsBody.removeChild(productDiv)
+
+		// Update cart items count
 		cartItemIds = cartItemIds.filter(cartItemId => cartItemId != cartItem.id)
 		cartItemsLength.innerText = cartItemIds.length
+
+		// Show the empty cart image when cart items count is 0
 		if(cartItemIds.length === 0)
 			cartEmptyImg.style.display = 'inline-block'
+		
+		// Change the selected icon back to 'add to cart' icon for all products removed from the cart
+		let productColDiv = document.getElementById(`product-${cartItem.id}`)
+		let requiredAddToCartButton = productColDiv.getElementsByClassName('add-to-cart-btn')[0]
+		requiredAddToCartButton.innerHTML = '<i class="fa fa-cart-plus" aria-hidden="true"></i>'
+		requiredAddToCartButton.classList.remove('disabled')
 	})
 }
 

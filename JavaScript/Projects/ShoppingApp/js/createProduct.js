@@ -83,6 +83,7 @@ const createProductDiv = (product) => {
 	addToCartButton.addEventListener('click', function () {
 		addToCart(product.id);
 		this.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
+		this.classList.add('disabled');
 	})
 }
 
