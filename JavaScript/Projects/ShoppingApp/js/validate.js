@@ -19,6 +19,7 @@ let passwordInvalid =
   passwordField.getElementsByClassName("invalid-feedback")[0];
 
 const validate = (flag = false) => {
+	let isValid = true
 	if (flag)
   	globalFlag = flag;
 
@@ -34,6 +35,7 @@ const validate = (flag = false) => {
     if (!firstName) {
       firstNameInvalid.style.display = "block";
       firstNameValid.style.display = "none";
+			isValid = false
     } else {
       firstNameValid.style.display = "block";
       firstNameInvalid.style.display = "none";
@@ -42,6 +44,7 @@ const validate = (flag = false) => {
     if (!lastName) {
       lastNameInvalid.style.display = "block";
       lastNameValid.style.display = "none";
+			isValid = false
     } else {
       lastNameValid.style.display = "block";
       lastNameInvalid.style.display = "none";
@@ -56,6 +59,7 @@ const validate = (flag = false) => {
     ) {
       emailInvalid.style.display = "block";
       emailValid.style.display = "none";
+			isValid = false
     } else {
       emailValid.style.display = "block";
       emailInvalid.style.display = "none";
@@ -64,9 +68,29 @@ const validate = (flag = false) => {
     if (!password || password.length < 8) {
       passwordInvalid.style.display = "block";
       passwordValid.style.display = "none";
+			isValid = false
     } else {
       passwordValid.style.display = "block";
       passwordInvalid.style.display = "none";
     }
   }
+	return isValid
 };
+
+const reset = () => {
+	firstNameField.getElementsByClassName("form-control")[0].value = ''
+	lastNameField.getElementsByClassName("form-control")[0].value = ''
+	emailField.getElementsByClassName("form-control")[0].value = ''
+	passwordField.getElementsByClassName("form-control")[0].value = ''
+
+	firstNameValid.style.display = 'none';
+	firstNameInvalid.style.display = 'none'
+	lastNameValid.style.display='none'
+	lastNameInvalid.style.display ='none'
+	emailValid.style.display = 'none'
+	emailInvalid.style.display = 'none'
+	passwordValid.style.display = 'none'
+	passwordInvalid.style.display = 'none'
+
+	globalFlag = false
+}
