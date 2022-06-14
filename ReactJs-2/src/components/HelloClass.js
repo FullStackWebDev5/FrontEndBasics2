@@ -18,7 +18,7 @@ class HelloClass extends Component {
 
 	changeCountry = () => {
 		this.setState({
-			country: 'US'
+			country: 'US',
 		})
 	}
 

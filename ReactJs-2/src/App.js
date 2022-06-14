@@ -1,14 +1,14 @@
 import './App.css';
 // import Hello from './components/Hello'
 // import HelloClass from './components/HelloClass'
+// import Counter from './components/Counter'
+import RenderingUsingLoops from './components/RenderingUsingLoops'
 
 function App() {
   return (
     <div className="App">
-      {/* <Hello student1='Rajesh' student2='Sunil' />
-			<Hello student1='Samaikhya' student2='Santhana' />
-			<HelloClass student1='Rajesh' student2='Sunil' /> */}
-			{/* <HelloClass student1='Samaikhya' /> */}
+			{/* <Counter /> */}
+			<RenderingUsingLoops />
     </div>
   );
 }
@@ -32,4 +32,10 @@ export default App;
 	Component re-renders whenever there is a change in either 
 	1. state (Data which is private/specific to a single component)
 	2. props (Data sent from parent component to child component)
+
+{/* <Hello student1='Rajesh' student2='Sunil' />
+<Hello student1='Samaikhya' student2='Santhana' />
+<HelloClass student1='Rajesh' student2='Sunil' /> }
+{/* <Hello student1='Rajesh' student2='Sunil' />
+<HelloClass student1='Samaikhya' />
 */
