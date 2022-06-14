@@ -236,11 +236,39 @@
 					</button>
 				</div>
 				<div class="modal-body" id="cart-items-body">
-
+					<form novalidate id="loginForm">
+						<div class="form-row">
+							<div class="col-md-12 mb-3 form-fields">
+								<label for="validationCustomUsername">Email</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="inputGroupPrepend">@</span>
+									</div>
+									<input type="text" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend" required onkeyup="loginValidate()">
+									<div class="valid-feedback">
+										Looks good!
+									</div>
+									<div class="invalid-feedback">
+										Please enter a valid email address.
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 mb-3 form-fields">
+								<label for="validationCustom03">Password</label>
+								<input type="password" class="form-control" id="validationCustom03" placeholder="Password" required onkeyup="loginValidate()">
+								<div class="valid-feedback">
+									Looks good!
+								</div>
+								<div class="invalid-feedback">
+									Please enter a valid password. (Min. 8 characters)
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Login</button>
+					<button type="button" class="btn btn-primary" onclick="login()">Login</button>
 				</div>
 			</div>
 		</div>
@@ -252,6 +280,7 @@
 	<script src="js/misc.js"></script>
 	<script src="js/validate.js"></script>
 	<script src="js/signUp.js"></script>
+	<script src="js/login.js"></script>
 </body>
 
 </html>

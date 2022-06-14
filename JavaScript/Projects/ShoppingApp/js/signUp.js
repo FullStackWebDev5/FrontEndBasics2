@@ -32,7 +32,15 @@ const signUp = () => {
 		reset()
 		$('#signUpModal').modal('hide')
 
+		let previousSignUpNavInnerContent = signUpNav.innerHTML
+		let previousLoginNavInnerContent = loginNav.innerHTML
+
 		signUpNav.innerHTML = `<a class="nav-link">Hi ${newUser.firstName}</a>`
 		loginNav.innerHTML = '<a class="nav-link">Logout</a>'
+
+		loginNav.addEventListener('click', () => {
+			signUpNav.innerHTML = previousSignUpNavInnerContent
+			loginNav.innerHTML = previousLoginNavInnerContent
+		})
 	}
 }
