@@ -4,6 +4,8 @@ let signUpNav = document.getElementById('sign-up-nav')
 let loginNav = document.getElementById('login-nav')
 
 const signUp = () => {
+	let notificationAlert = document.getElementById('notification-alert')
+	let notificationText = document.getElementById('notification-text')
 	let isValid =	validate(true)
 
 	if (isValid) {
@@ -31,6 +33,14 @@ const signUp = () => {
 
 		reset()
 		$('#signUpModal').modal('hide')
+
+		notificationAlert.classList = 'alert alert-success alert-dismissible fade show'
+		notificationText.innerText = 'Congratulations! You have successfully signed up!'
+		notificationAlert.style.display = 'block';
+
+		setTimeout(() => {
+			notificationAlert.style.display = 'none';
+		}, 5000)
 
 		let previousSignUpNavInnerContent = signUpNav.innerHTML
 		let previousLoginNavInnerContent = loginNav.innerHTML

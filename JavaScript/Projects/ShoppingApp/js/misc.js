@@ -1,3 +1,5 @@
+let notificationAlert = document.getElementById('notification-alert')
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 	anchor.addEventListener('click', function (e) {
 			e.preventDefault();
@@ -7,3 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			});
 	});
 });
+
+const hideAlert = () => {
+	notificationAlert.style.display = 'none';
+}

@@ -128,3 +128,9 @@ body {
 #signUpModal .modal-body, #loginModal .modal-body {
 	padding: 1rem 3rem;
 }
+
+#notification-alert {
+	position: absolute;
+	right: 10px;
+	display: none;
+}
