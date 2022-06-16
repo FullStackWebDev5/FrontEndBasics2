@@ -1,0 +1,39 @@
+.navbar, .jumbotron {
+	background-color: #fbe5d6;
+}
+
+.navbar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.jumbotron {
+	text-align: center;
+}
+
+.navbar img {
+	border-radius: 10px;
+	margin-right: 2px;
+}
+
+.brand-name {
+	background: linear-gradient(90deg, rgba(132,28,60,1) 0%, rgba(248,95,81,1) 100%);
+	color: #fbe5d6;
+	padding: 5px 30px;
+	border-radius: 60px;
+}
+
+.btn-primary {
+	background: linear-gradient(90deg, rgba(132,28,60,1) 0%, rgba(248,95,81,1) 100%);
+}
+.btn {
+	border: none;
+}
+.btn:active {
+	box-shadow: none;
+}
+.btn:focus {
+	box-shadow: none;
+}

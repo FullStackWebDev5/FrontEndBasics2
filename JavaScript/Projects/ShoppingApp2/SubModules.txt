@@ -1,0 +1,16 @@
+1. Navbar
+2. Header
+3. Products
+	a. UI
+	b. linking API
+4. About Us
+5. Contact Us
+6. Link a + btn with div (scroll)
+7. Cart Modal
+8. Cart Items Card
+9. Sign Up Modal
+10. Login Modal
+11. Validation
+	a. Sign Up
+	b. Login
+12. Authentication + Alert
