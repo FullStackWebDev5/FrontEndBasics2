@@ -1,14 +1,19 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Hello from './components/Hello'
 // import HelloClass from './components/HelloClass'
 // import Counter from './components/Counter'
-import RenderingUsingLoops from './components/RenderingUsingLoops'
+// import RenderingUsingLoops from './components/RenderingUsingLoops'
+// import BulbOnOff from './components/BulbOnOff';
+import BootstrapBasics from './components/BootstrapBasics'
 
 function App() {
   return (
     <div className="App">
 			{/* <Counter /> */}
-			<RenderingUsingLoops />
+			{/* <RenderingUsingLoops /> */}
+			{/* <BulbOnOff /> */}
+			<BootstrapBasics />
     </div>
   );
 }
