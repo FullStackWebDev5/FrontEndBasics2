@@ -20,6 +20,7 @@ export class Cart extends Component {
             rate: 3.9,
             count: 120,
           },
+					inCart: true,
         },
         {
           id: 2,
@@ -34,6 +35,7 @@ export class Cart extends Component {
             rate: 4.1,
             count: 259,
           },
+					inCart: true,
         },
         {
           id: 3,
@@ -47,6 +49,7 @@ export class Cart extends Component {
             rate: 4.7,
             count: 500,
           },
+					inCart: true,
         },
         {
           id: 4,
@@ -60,6 +63,7 @@ export class Cart extends Component {
             rate: 2.1,
             count: 430,
           },
+					inCart: true,
         },
         {
           id: 5,
@@ -75,6 +79,7 @@ export class Cart extends Component {
             rate: 4.6,
             count: 400,
           },
+					inCart: true,
         },
         {
           id: 6,
@@ -89,6 +94,7 @@ export class Cart extends Component {
             rate: 3.9,
             count: 70,
           },
+					inCart: true,
         },
         {
           id: 7,
@@ -103,6 +109,7 @@ export class Cart extends Component {
             rate: 3,
             count: 400,
           },
+					inCart: true,
         },
         {
           id: 8,
@@ -117,6 +124,7 @@ export class Cart extends Component {
             rate: 1.9,
             count: 100,
           },
+					inCart: true,
         },
         {
           id: 9,
@@ -130,6 +138,7 @@ export class Cart extends Component {
             rate: 3.3,
             count: 203,
           },
+					inCart: true,
         },
         {
           id: 10,
@@ -143,16 +152,29 @@ export class Cart extends Component {
             rate: 2.9,
             count: 470,
           },
+					inCart: true,
         },
       ],
     };
   }
+
+	removeFromCart = (cartItemID) => {
+		let updatedCartItems = this.state.cartItems.map(cartItem => {
+			if(cartItem.id === cartItemID)
+				cartItem.inCart = false
+			return cartItem
+		})
+		this.setState({
+			cartItems: updatedCartItems
+		})
+	}
+
   render() {
     const { cartItems } = this.state;
     return (
       <div className="cart-outer">
-				<h1>Cart Items</h1>
-        {cartItems.map((cartItem) => (
+				<h1>Cart Items ({cartItems.filter(cartItem => cartItem.inCart).length})</h1>
+        {cartItems.filter(cartItem => cartItem.inCart).map((cartItem) => (
           <div className="cart-item">
             <img
               src={cartItem.image}
@@ -162,7 +184,7 @@ export class Cart extends Component {
 						<div className="cart-item-details">
 							<h4>{cartItem.title}</h4>
 							<h5>${cartItem.price}</h5>
-							<button className="remove-from-cart-btn">Remove from cart</button>
+							<button className="remove-from-cart-btn" onClick={() => this.removeFromCart(cartItem.id)}>Remove from cart</button>
 						</div>
           </div>
         ))}
