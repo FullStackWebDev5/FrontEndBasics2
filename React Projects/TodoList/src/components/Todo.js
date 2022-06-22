@@ -11,23 +11,56 @@ import {
 import "./Todo.css";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteOutline, MdOutlineAddBox } from "react-icons/md";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 export class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
       inputToDo: "",
-      toDoList: [
-        "Revise Asynchronous Javascript",
-        "Practive Array Method Questions",
-        "Revise React Components and props",
-        "Revise React States",
-      ],
+      toDoList: [],
+			isEditing: false,
+			editingIndex: ''
     };
   }
 
+	addOrUpdateToDo(){
+		const { inputToDo, isEditing, editingIndex } = this.state;
+		if(inputToDo){
+			if(isEditing) {
+				this.setState((prevState) => ({
+					toDoList: prevState.toDoList.map((todo, index) => {
+						if(index === editingIndex)
+							todo = inputToDo
+						return todo
+					}),
+					inputToDo: "",
+				}))
+			} else {
+				this.setState((prevState) => ({
+					toDoList: [...prevState.toDoList, inputToDo],
+					inputToDo: "",
+				}))
+			}
+		}
+	}
+
+	editTodo(inputIndex) {
+		this.setState((prevState) => ({
+			inputToDo: prevState.toDoList[inputIndex],
+			isEditing: true,
+			editingIndex: inputIndex
+		}))
+	}
+
+	deleteTodo(inputIndex) {
+		this.setState((prevState) => ({
+			toDoList: prevState.toDoList.filter((todo, index) => index !== inputIndex)
+		}))
+	}
+
   render() {
-    const { inputToDo, toDoList } = this.state;
+    const { inputToDo, toDoList, isEditing } = this.state;
     return (
       <Container style={{ margin: "20px auto" }}>
         <Col md={{ span: 4, offset: 4 }}>
@@ -42,13 +75,9 @@ export class Todo extends Component {
             <Button
               variant="outline-dark"
               id="button-addon2"
-              onClick={() =>
-                this.setState((prevState) => ({
-                  toDoList: [...prevState.toDoList, inputToDo],
-                }))
-              }
+              onClick={() => this.addOrUpdateToDo()}
             >
-              <MdOutlineAddBox />
+              {isEditing ? <AiOutlineCheckCircle /> : <MdOutlineAddBox />}
             </Button>
           </InputGroup>
           <ListGroup className="to-do-list">
@@ -57,10 +86,18 @@ export class Todo extends Component {
                 <Row>
                   <Col md={9}>{toDo}</Col>
                   <Col md={3} className="action-btns">
-                    <Button variant="warning" size="sm">
+                    <Button
+                      variant="warning"
+                      size="sm"
+                      onClick={() => this.editTodo(index)}
+                    >
                       <FaEdit />
                     </Button>
-                    <Button variant="danger" size="sm">
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      onClick={() => this.deleteTodo(index)}
+                    >
                       <MdDeleteOutline />
                     </Button>
                   </Col>
