@@ -11,6 +11,10 @@
 	border: 1px solid #212529;
 }
 
+.to-do-input-btn:focus {
+	box-shadow: none;
+}
+
 .action-btns {
 	display: flex;
 	justify-content: space-around;
@@ -19,4 +23,8 @@
 
 .action-btns .btn {
 	border-radius: 20px;
+}
+
+.completed {
+	text-decoration: line-through;
 }
