@@ -10,8 +10,10 @@ import {
 } from "react-bootstrap";
 import "./Todo.css";
 import { FaEdit } from "react-icons/fa";
-import { MdDeleteOutline, MdOutlineAddBox } from "react-icons/md";
+import { MdDeleteOutline, MdOutlineAddBox, MdOutlineAdd } from "react-icons/md";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import { GrAdd } from "react-icons/gr";
 
 export class Todo extends Component {
   constructor(props) {
@@ -35,6 +37,8 @@ export class Todo extends Component {
 						return todo
 					}),
 					inputToDo: "",
+					isEditing: false,
+					editingIndex: ''
 				}))
 			} else {
 				this.setState((prevState) => ({
@@ -71,21 +75,22 @@ export class Todo extends Component {
               placeholder="Enter To-Do"
               value={inputToDo}
               onChange={(e) => this.setState({ inputToDo: e.target.value })}
+							className='to-do-input'
             />
             <Button
-              variant="outline-dark"
+              variant="dark"
               id="button-addon2"
               onClick={() => this.addOrUpdateToDo()}
             >
-              {isEditing ? <AiOutlineCheckCircle /> : <MdOutlineAddBox />}
+              {isEditing ? <AiOutlineCheckCircle /> : <MdOutlineAdd />}
             </Button>
           </InputGroup>
           <ListGroup className="to-do-list">
             {toDoList.map((toDo, index) => (
               <ListGroup.Item key={index}>
                 <Row>
-                  <Col md={9}>{toDo}</Col>
-                  <Col md={3} className="action-btns">
+                  <Col xs={9}>{toDo}</Col>
+                  <Col xs={3} className="action-btns">
                     <Button
                       variant="warning"
                       size="sm"
@@ -100,6 +105,12 @@ export class Todo extends Component {
                     >
                       <MdDeleteOutline />
                     </Button>
+										<Button
+											variant="success"
+											size="sm"
+										>
+											<IoCheckmarkDoneOutline />
+										</Button>
                   </Col>
                 </Row>
               </ListGroup.Item>
