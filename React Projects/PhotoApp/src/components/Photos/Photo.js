@@ -30,8 +30,9 @@ const Photo = () => {
                   src={photo.download_url}
                   className="photo-img"
                 />
-                <Card.Body>
+                <Card.Body className="btn-wrapper">
                   <a className="btn btn-dark" href={photo.url}>View Source</a>
+									<a className="btn btn-dark">View Enlarged</a>
                 </Card.Body>
               </Card>
             </Col>

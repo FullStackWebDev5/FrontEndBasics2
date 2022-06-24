@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import Photo from "./components/Photos/Photo";
 import About from "./components/About"
+import Contact from "./components/Contact"
+import EnlargedPhoto from './components/EnlargedPhoto'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -13,6 +15,8 @@ const App = () => {
 				<Routes>
 					<Route path='/' element={<Photo />} />
 					<Route path='/about' element={<About />} />
+					<Route path='/contact' element={<Contact />} />
+					<Route path='/photo/:id' element={<EnlargedPhoto />} />
 				</Routes>
       </div>
     </BrowserRouter>
@@ -20,3 +24,23 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <Link to='/'>Home</Link>{' '}
+<Link to='/about'>About</Link>{' '}
+<Link to='/contact'>Contact</Link> */

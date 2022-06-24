@@ -9,3 +9,8 @@
 .spinner-wrapper {
 	margin: 50px 0;
 }
+
+.btn-wrapper {
+	display: flex;
+  justify-content: space-between;
+}
