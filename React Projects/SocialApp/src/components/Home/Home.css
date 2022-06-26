@@ -1,5 +1,5 @@
 .single-photo {
-	margin: 10px 0;
+	margin-bottom: 20px;
 }
 
 .photo-img {
@@ -11,7 +11,7 @@
 }
 
 .posts-container {
-	width: 400px;
+	margin-top: 10px;
 }
 
 .post-header{
@@ -22,11 +22,18 @@
 }
 
 .action-btn-outer {
-	display: flex;
-	justify-content: space-between;
+	text-align: right;
+}
+
+.action-btn-outer .btn{
+	margin-left: 10px;
 }
 
 .post-time {
 	margin-bottom: 0;
 	opacity: 0.6;
+}
+
+.member-list-item, .chat-list-item {
+	text-align: left;
 }
