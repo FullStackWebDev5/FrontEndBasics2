@@ -1,0 +1,22 @@
+{
+  "1": {
+		"message": "Hey! How are you doing? 🙂",
+		"messageCount": 1
+	},
+  "2": {
+		"message": "You're coming today?",
+		"messageCount": 3
+	},
+  "3": {
+		"message": "Congratulations! 🥳",
+		"messageCount": 5
+	},
+	"4": {
+		"message": "This is a very beautiful picture 👌",
+		"messageCount": 2
+	}, 
+	"5": {
+		"message": "Let's catchup!",
+		"messageCount": 4
+	}
+}

@@ -4,6 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import "./Home.css";
 import dummyPostText from "../../assets/dummyPostText.json";
 import dummyPostTime from "../../assets/dummyPostTime.json";
+import dummyChatListContent from "../../assets/dummyChatListContent.json";
 import Posts from "./Posts";
 import MemberActiveStatusList from "./MemberActiveStatusList";
 import ChatList from "./ChatList";
@@ -39,7 +40,12 @@ const Home = () => {
     getPhotos();
   }, []);
 
-  let randomChatList = posts.filter((post) => Number(post.id) % 5 === 0);
+  let randomChatList = posts
+    .filter((post) => Number(post.id) % 5 === 0)
+    .map((post) => {
+      post.chat = dummyChatListContent[Math.ceil(Math.random() * 5)];
+      return post;
+    });
 
   return (
     <Container className="posts-container">

@@ -5,22 +5,33 @@ const MemberActiveStatusList = ({ posts }) => {
   return (
     <Col md={3}>
       <ListGroup as="ul">
-        {posts.map((post) => (
-          <ListGroup.Item
-            as="li"
-            className="d-flex justify-content-between align-items-start member-list-item"
-            key={post.id}
-          >
-            <div className="ms-2 me-auto">
-              <div className="fw-bold">
-                <FaUserCircle /> {post.author}
+        {posts.map((post) => {
+          let randomIsActive = Math.ceil(Math.random() * 2) % 2;
+          return (
+            <ListGroup.Item
+              as="li"
+              className={`d-flex justify-content-between align-items-start member-list-item ${
+                randomIsActive ? "inactive" : ""
+              }`}
+              key={post.id}
+            >
+              <div className="ms-2 me-auto">
+                <div className="fw-bold">
+                  <FaUserCircle /> {post.author}
+                </div>
               </div>
-            </div>
-            <Badge bg="success" pill>
-              Active
-            </Badge>
-          </ListGroup.Item>
-        ))}
+              {!randomIsActive ? (
+                <Badge bg="success" pill>
+                  Active
+                </Badge>
+              ) : (
+                <Badge bg="secondary" pill>
+                  Away
+                </Badge>
+              )}
+            </ListGroup.Item>
+          );
+        })}
       </ListGroup>
     </Col>
   );
