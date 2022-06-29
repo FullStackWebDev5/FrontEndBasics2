@@ -1,5 +1,6 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import "./NewsList.css";
+import { Link } from 'react-router-dom'
 
 const NewsList = ({ newsList }) => {
   return (
@@ -7,7 +8,7 @@ const NewsList = ({ newsList }) => {
       <Row>
         {newsList && newsList.map((singleNews, index) => (
           <Col md={4} key={index} className="single-news">
-            <Card>
+            <Card className="text-center">
               <Card.Img
                 variant="top"
                 src={
@@ -28,7 +29,7 @@ const NewsList = ({ newsList }) => {
                     ? `${singleNews.description.slice(0, 180)}...`
                     : singleNews.description}
                 </Card.Text>
-                <Button variant="dark">Read more</Button>
+                <Link className='btn btn-dark' to={`/news/${index}`}>Read more</Link>
               </Card.Body>
             </Card>
           </Col>
