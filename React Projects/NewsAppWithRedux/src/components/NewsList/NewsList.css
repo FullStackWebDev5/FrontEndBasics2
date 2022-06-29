@@ -1,0 +1,15 @@
+.single-news {
+	margin-top: 20px;
+}
+
+.single-news .card-img-top {
+	height: 235px;
+}
+
+.single-news .card-title {
+	height: 72px;
+}
+
+.single-news .card-text {
+	height: 90px;
+}

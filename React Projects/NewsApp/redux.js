@@ -26,7 +26,7 @@ const decrementCounter = (count = 1) => ({
 /*
 	REDUCER FUNCTION
 	- Define the initial state (Central State)
-	- Function with 2 parameter - prevState, action
+	- Function with 2 parameter -> prevState, action
 	- Contains logic to return the updated state on the basis of action type
 */
 
