@@ -25,6 +25,7 @@ const EnlargedPhoto = () => {
     width: "90vw",
     margin: "30px 0 0",
   };
+	
   return (
     <>
       {Object.keys(singlePhoto).length ? (
